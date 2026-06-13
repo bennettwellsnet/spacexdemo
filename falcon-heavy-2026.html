@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcon Heavy 2026 Launches</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .font-display { font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif; font-weight: 600; }
+    .space-bg { background: radial-gradient(circle at 50% 20%, #0a1429 0%, #020617 50%, #000000 100%); }
+    .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 1.5s infinite alternate; }
+    @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+    .mission-table th { font-weight: 500; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .mission-row:hover { background-color: rgba(255,255,255,0.03); }
+  </style>
+</head>
+<body class="bg-black text-white space-bg min-h-screen">
+  <!-- Stars -->
+  <div id="stars" class="fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-50 border-b border-white/10 bg-black/60 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-x-3">
+          <a href="index.html" class="flex items-center gap-x-2">
+            <i class="fa-solid fa-rocket text-[#f97316] text-2xl"></i>
+            <span class="font-semibold text-xl tracking-tight">SpaceX 2026</span>
+          </a>
+          <span class="text-xs px-2.5 py-1 rounded bg-white/5 text-white/60 border border-white/10">FALCON HEAVY</span>
+        </div>
+        <div>
+          <a href="index.html" class="text-sm flex items-center gap-x-1.5 px-4 py-2 rounded-xl hover:bg-white/5 transition">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Counter</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-6">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <div class="text-sm text-[#a1a1aa] font-medium tracking-[2px]">FALCON HEAVY</div>
+        <h1 class="text-5xl font-semibold tracking-tighter font-display">2026 Launches</h1>
+        <p class="mt-1 text-xl text-white/70">1 launch • YTD as of June 13, 2026</p>
+      </div>
+      <div class="text-right hidden sm:block">
+        <div class="text-4xl font-semibold tabular-nums text-[#a1a1aa]">1</div>
+        <div class="text-xs text-white/50">of ~5-10 expected in 2026</div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="bg-white/5 border border-white/10 rounded-3xl p-8 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="font-semibold text-lg mb-2">ViaSat-3 F3 Mission</h2>
+          <div class="space-y-1 text-sm">
+            <div><span class="text-white/60">Date:</span> April 29, 2026</div>
+            <div><span class="text-white/60">Launch Site:</span> Kennedy Space Center, LC-39A</div>
+            <div><span class="text-white/60">Payload:</span> ViaSat-3 F3 (Ka-band communications satellite, ~6,400 kg to GTO)</div>
+            <div><span class="text-white/60">Outcome:</span> <span class="text-emerald-400">Success</span></div>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg mb-2">Key Details</h2>
+          <ul class="text-sm space-y-1 text-white/80">
+            <li>• First Falcon Heavy launch of 2026 (first since 2024)</li>
+            <li>• Center core expended; both side boosters recovered</li>
+            <li>• Near-simultaneous side booster landings at LZ-2 and LZ-40</li>
+            <li>• Marked return of Falcon Heavy to service</li>
+          </ul>
+          <div class="mt-4 text-xs text-white/50">
+            Source: SpaceX, Wikipedia, Spaceflight Now
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming -->
+    <div class="mb-8">
+      <h2 class="font-semibold text-lg mb-3 px-1">Other 2026 Falcon Heavy Missions (Planned)</h2>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-sm text-white/70">
+        Additional Falcon Heavy flights are scheduled for later in 2026, including:
+        <ul class="mt-2 list-disc list-inside space-y-1">
+          <li>NASA Nancy Grace Roman Space Telescope (NET September 2026, LC-39A)</li>
+          <li>USSF and commercial missions (NET Q4 2026)</li>
+        </ul>
+        <div class="mt-2 text-xs">(Dates subject to change; see SpaceX Launches page for latest manifest.)</div>
+      </div>
+    </div>
+
+    <div class="text-xs text-white/50 px-1">
+      <a href="index.html" class="underline hover:text-white">← Back to 2026 Counter</a> • 
+      Full list: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white">Wikipedia</a> • 
+      <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white">SpaceX</a>
+    </div>
+  </div>
+
+  <footer class="border-t border-white/10 py-6 text-center text-xs text-white/50">
+    Demo page for <a href="https://bennettwells.net/testing" class="underline">bennettwells.net/testing</a>
+  </footer>
+
+  <script>
+    function initTailwind() {
+      if (window.tailwind) tailwind.config = { theme: { extend: {} } };
+    }
+
+    function createStars() {
+      const container = document.getElementById('stars');
+      if (!container) return;
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2 + 0.5;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        container.appendChild(star);
+      }
+    }
+
+    function init() {
+      initTailwind();
+      const container = document.getElementById('stars');
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2 + 0.5;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        container.appendChild(star);
+      }
+      console.log('%c[Falcon Heavy 2026] Detail page initialized.', 'color:#64748b');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
