@@ -1,1 +1,492 @@
- [full updated content with spacexdemo] 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceX 2026 • Rocket Counter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+    
+    body { font-family: 'Inter', system_ui, sans-serif; }
+    .font-display { font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif; font-weight: 600; }
+    
+    .space-bg {
+      background: radial-gradient(circle at 50% 20%, #0a1429 0%, #020617 50%, #000000 100%);
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 1.5s infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+    .rocket-icon {
+      transition: transform 0.2s ease;
+    }
+    .launch-btn:active .rocket-icon {
+      transform: translateY(-8px) rotate(12deg);
+    }
+    .counter {
+      font-variant-numeric: tabular-nums;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mission-log {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .stat-card {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+    }
+    .progress-bar {
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-black text-white space-bg min-h-screen overflow-x-hidden">
+  <!-- Stars background -->
+  <div id="stars" class="fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- Nav -->
+  <nav class="relative z-50 border-b border-white/10 bg-black/60 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-x-3">
+          <div class="flex items-center gap-x-2">
+            <i class="fa-solid fa-rocket text-[#f97316] text-2xl"></i>
+            <span class="font-semibold text-xl tracking-tight">SpaceX 2026</span>
+          </div>
+          <div class="hidden sm:block text-xs px-2.5 py-1 rounded bg-white/5 text-white/60 border border-white/10">LIVE COUNTER</div>
+        </div>
+        <div class="flex items-center gap-x-3 text-sm">
+          <a href="https://github.com/bennettwellsnet/spacexdemo" target="_blank" class="flex items-center gap-x-1.5 px-3 py-1.5 rounded-xl hover:bg-white/5 text-white/80 hover:text-white transition">
+            <i class="fa-brands fa-github"></i>
+            <span class="hidden sm:inline">Source on GitHub</span>
+          </a>
+          <a href="https://bennettwells.net" target="_blank" class="text-white/60 hover:text-white text-xs px-2">bennettwells.net</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
+    <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium mb-6 tracking-widest">
+      <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+      <span>AS OF JUNE 13, 2026</span>
+    </div>
+
+    <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter font-display mb-3">
+      Rockets to Space
+    </h1>
+    <p class="text-2xl md:text-3xl text-white/70 mb-2">by SpaceX in 2026</p>
+    
+    <!-- BIG COUNTER -->
+    <div class="mt-8 mb-2">
+      <div id="main-counter" 
+           class="counter text-[120px] md:text-[140px] font-semibold tabular-nums leading-none tracking-[-6px] text-white">
+        72
+      </div>
+      <div class="text-lg text-white/60 -mt-4">orbital rockets launched</div>
+    </div>
+
+    <div class="flex items-center justify-center gap-x-3 text-sm">
+      <div class="px-4 py-1 bg-white/5 border border-white/10 rounded-2xl">72 successful missions</div>
+      <div class="px-4 py-1 bg-white/5 border border-white/10 rounded-2xl">~99.7% success rate</div>
+    </div>
+  </div>
+
+  <!-- Breakdown -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pb-10">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <!-- Falcon 9 - now links to detailed missions page -->
+      <a href="falcon9-2026.html" class="stat-card block bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-[#3b82f6]/60 hover:bg-white/10 transition group">
+        <div class="flex items-center gap-x-3">
+          <i class="fa-solid fa-rocket text-3xl text-[#3b82f6]"></i>
+          <div class="flex-1">
+            <div class="flex items-baseline justify-between">
+              <div class="text-4xl font-semibold tabular-nums group-hover:text-[#3b82f6] transition" id="f9-count">68</div>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-white/40 group-hover:text-[#3b82f6] transition"></i>
+            </div>
+            <div class="text-sm text-white/60">Falcon 9 <span class="text-[10px] text-[#3b82f6]/70">(all missions)</span></div>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Starship - link to new detailed page -->
+      <a href="starship-2026.html" class="stat-card block bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-[#f97316]/60 hover:bg-white/10 transition group">
+        <div class="flex items-center gap-x-3">
+          <i class="fa-solid fa-shuttle-space text-3xl text-[#f97316]"></i>
+          <div class="flex-1">
+            <div class="flex items-baseline justify-between">
+              <div class="text-4xl font-semibold tabular-nums group-hover:text-[#f97316] transition" id="starship-count">3</div>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-white/40 group-hover:text-[#f97316] transition"></i>
+            </div>
+            <div class="text-sm text-white/60">Starship <span class="text-[10px] text-[#f97316]/70">(tests & flights)</span></div>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Falcon Heavy - link to new detailed page -->
+      <a href="falcon-heavy-2026.html" class="stat-card block bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-[#a1a1aa]/60 hover:bg-white/10 transition group">
+        <div class="flex items-center gap-x-3">
+          <i class="fa-solid fa-rocket text-3xl text-[#a1a1aa]"></i>
+          <div class="flex-1">
+            <div class="flex items-baseline justify-between">
+              <div class="text-4xl font-semibold tabular-nums group-hover:text-[#a1a1aa] transition" id="fh-count">1</div>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-white/40 group-hover:text-[#a1a1aa] transition"></i>
+            </div>
+            <div class="text-sm text-white/60">Falcon Heavy <span class="text-[10px] text-[#a1a1aa]/70">(2026 launch)</span></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Goal Progress -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pb-12">
+    <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+      <div class="flex justify-between items-baseline mb-3">
+        <div>
+          <div class="font-semibold">2026 Launch Pace</div>
+          <div class="text-xs text-white/50">SpaceX target cadence: ~140–160 missions</div>
+        </div>
+        <div class="text-right">
+          <span class="font-mono text-2xl font-semibold tabular-nums" id="goal-current">72</span>
+          <span class="text-white/60"> / 160</span>
+        </div>
+      </div>
+      
+      <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+        <div id="goal-progress" 
+             class="h-3 bg-gradient-to-r from-[#3b82f6] to-[#f97316] rounded-full progress-bar" 
+             style="width: 45%"></div>
+      </div>
+      
+      <div class="flex justify-between text-xs text-white/50 mt-2">
+        <div>45% of ambitious target</div>
+        <div>On pace for record year</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Simulator -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pb-12">
+    <div class="flex items-center justify-between mb-4 px-1">
+      <div>
+        <span class="font-semibold text-xl">Mission Simulator</span>
+        <span class="text-xs text-white/50 ml-2">(for fun — demo only)</span>
+      </div>
+      <button onclick="resetToOfficial()" 
+              class="text-xs px-3 py-1 rounded-xl border border-white/20 hover:bg-white/5 transition">
+        Reset to official count
+      </button>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <!-- Launch Button -->
+        <div class="flex-1 text-center">
+          <button onclick="simulateLaunch()" 
+                  class="launch-btn group inline-flex flex-col items-center justify-center px-10 py-6 bg-white text-black font-semibold rounded-3xl hover:bg-white active:scale-[0.985] transition shadow-xl">
+            <div class="flex items-center gap-x-3 text-xl">
+              <i class="fa-solid fa-rocket rocket-icon text-[#f97316] group-active:-translate-y-1 transition-transform"></i>
+              <span>Record Next Launch</span>
+            </div>
+            <div class="text-xs text-black/50 mt-1">Adds a real-style mission</div>
+          </button>
+        </div>
+
+        <!-- Live Log -->
+        <div class="flex-1 w-full">
+          <div class="text-xs uppercase tracking-widest text-white/50 mb-2 px-1">Mission Log (simulated)</div>
+          <div id="mission-log" 
+               class="mission-log bg-black/60 border border-white/10 rounded-2xl p-4 h-[148px] overflow-auto text-xs space-y-1.5 text-white/80">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notable 2026 Missions -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pb-14">
+    <div class="px-1 mb-4">
+      <span class="font-semibold text-xl">Notable 2026 Missions</span>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <div class="flex justify-between">
+          <div>
+            <div class="font-medium">Starlink Group 17-54</div>
+            <div class="text-xs text-white/60">June 2026 • Vandenberg</div>
+          </div>
+          <div class="text-right text-xs"><span class="px-2 py-px bg-emerald-500/20 text-emerald-400 rounded">29 sats</span></div>
+        </div>
+      </div>
+      
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <div class="flex justify-between">
+          <div>
+            <div class="font-medium">Bluebird 8-10 Mission</div>
+            <div class="text-xs text-white/60">June 2026 • Cape Canaveral</div>
+          </div>
+          <div class="text-right text-xs"><span class="px-2 py-px bg-emerald-500/20 text-emerald-400 rounded">Falcon 9</span></div>
+        </div>
+      </div>
+      
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <div class="flex justify-between">
+          <div>
+            <div class="font-medium">NROL-179</div>
+            <div class="text-xs text-white/60">June 2026 • Vandenberg</div>
+          </div>
+          <div class="text-right text-xs"><span class="px-2 py-px bg-sky-500/20 text-sky-400 rounded">National Security</span></div>
+        </div>
+      </div>
+      
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <div class="flex justify-between">
+          <div>
+            <div class="font-medium">1,000th Starlink Satellite of 2026</div>
+            <div class="text-xs text-white/60">April 2026 • Cape Canaveral</div>
+          </div>
+          <div class="text-right text-xs"><span class="px-2 py-px bg-amber-500/20 text-amber-400 rounded">Milestone</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="relative z-10 border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-6 py-8 text-xs text-white/50">
+      <div class="flex flex-col md:flex-row md:items-center gap-y-2 md:justify-between">
+        <div>
+          Data is approximate and based on public sources (SpaceX manifest, Wikipedia, NextSpaceflight) as of June 13, 2026. 
+          For live updates visit <a href="https://www.spacex.com/launches" class="underline hover:text-white/80" target="_blank">spacex.com/launches</a>.
+        </div>
+        <div>
+          Demo page • <a href="https://github.com/bennettwellsnet/spacexdemo" class="underline hover:text-white/80" target="_blank">bennettwellsnet/spacexdemo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tailwind
+    function initTailwind() {
+      if (window.tailwind) {
+        tailwind.config = {
+          theme: { extend: {} }
+        };
+      }
+    }
+
+    // Create subtle stars
+    function createStars() {
+      const container = document.getElementById('stars');
+      if (!container) return;
+      for (let i = 0; i < 120; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 2.5 + 0.8;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.opacity = Math.random() * 0.7 + 0.3;
+        star.style.animationDelay = `-${Math.random() * 3}s`;
+        container.appendChild(star);
+      }
+    }
+
+    // Main counter
+    let currentCount = 72;
+    let f9Count = 68;
+    let starshipCount = 3;
+    let fhCount = 1;
+
+    function updateMainCounter(newValue) {
+      const el = document.getElementById('main-counter');
+      if (!el) return;
+      
+      // Simple count-up animation
+      const start = parseInt(el.textContent) || currentCount;
+      const end = newValue;
+      const duration = 600;
+      const startTime = performance.now();
+      
+      function animate(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(start + (end - start) * progress);
+        el.textContent = value;
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          el.textContent = end;
+          currentCount = end;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function updateBreakdown() {
+      const f9 = document.getElementById('f9-count');
+      const ss = document.getElementById('starship-count');
+      const fh = document.getElementById('fh-count');
+      if (f9) f9.textContent = f9Count;
+      if (ss) ss.textContent = starshipCount;
+      if (fh) fh.textContent = fhCount;
+      
+      // Update progress
+      const total = currentCount;
+      const goal = 160;
+      const pct = Math.min(Math.round((total / goal) * 100), 100);
+      
+      const bar = document.getElementById('goal-progress');
+      const currentEl = document.getElementById('goal-current');
+      if (bar) bar.style.width = pct + '%';
+      if (currentEl) currentEl.textContent = total;
+    }
+
+    // Mission log
+    const missionNames = [
+      'Starlink Group 17-54', 'Bluebird 8-10', 'NROL-179',
+      'Starlink Group 17-43', 'Starlink Group 10-35', 'Globalstar 2-R',
+      'Starlink Group 10-43', 'Tranche 1 Transport Layer'
+    ];
+    
+    function addMissionLog(name, type = 'Falcon 9') {
+      const log = document.getElementById('mission-log');
+      if (!log) return;
+      
+      const entry = document.createElement('div');
+      entry.className = 'flex justify-between items-center py-0.5 border-b border-white/10 last:border-0';
+      entry.innerHTML = `
+        <div>
+          <span class="text-emerald-400">✓</span> 
+          <span>${name}</span>
+        </div>
+        <div class="text-[10px] text-white/50">${type} • Success</div>
+      `;
+      log.prepend(entry);
+      
+      // Keep only last 8
+      while (log.children.length > 8) {
+        log.removeChild(log.lastChild);
+      }
+    }
+
+    // Simulate a new launch
+    function simulateLaunch() {
+      // Randomly decide type
+      const rand = Math.random();
+      let type = 'Falcon 9';
+      let name = missionNames[Math.floor(Math.random() * missionNames.length)];
+      
+      if (rand < 0.12) {
+        type = 'Starship';
+        starshipCount++;
+        name = 'Starship Flight ' + (12 + Math.floor(Math.random()*3));
+      } else if (rand < 0.15) {
+        type = 'Falcon Heavy';
+        fhCount++;
+        name = 'Falcon Heavy Mission';
+      } else {
+        f9Count++;
+      }
+      
+      currentCount++;
+      
+      // Update UI
+      updateMainCounter(currentCount);
+      updateBreakdown();
+      addMissionLog(name, type);
+      
+      // Little celebration
+      const btns = document.querySelectorAll('.launch-btn');
+      if (btns.length) {
+        btns[0].classList.add('!bg-emerald-400');
+        setTimeout(() => btns[0].classList.remove('!bg-emerald-400'), 300);
+      }
+      
+      // Bonus: sometimes add Starlink sats note
+      if (Math.random() > 0.6 && document.getElementById('mission-log')) {
+        const extra = document.createElement('div');
+        extra.className = 'text-[10px] text-[#f97316]/70 pl-5';
+        extra.textContent = `+${Math.floor(Math.random()*6)+24} Starlink satellites deployed`;
+        const log = document.getElementById('mission-log');
+        if (log.firstChild) log.firstChild.appendChild(extra);
+      }
+    }
+
+    function resetToOfficial() {
+      currentCount = 72;
+      f9Count = 68;
+      starshipCount = 3;
+      fhCount = 1;
+      
+      const mainEl = document.getElementById('main-counter');
+      if (mainEl) mainEl.textContent = currentCount;
+      
+      updateBreakdown();
+      
+      const log = document.getElementById('mission-log');
+      if (log) {
+        log.innerHTML = '';
+        // seed a few
+        addMissionLog('Starlink Group 17-54', 'Falcon 9');
+        addMissionLog('NROL-179', 'Falcon 9');
+      }
+    }
+
+    // Boot
+    function init() {
+      initTailwind();
+      createStars();
+      
+      // Initial values
+      const mainEl = document.getElementById('main-counter');
+      if (mainEl) mainEl.textContent = currentCount;
+      
+      updateBreakdown();
+      
+      // Seed log with a couple real-ish entries
+      const log = document.getElementById('mission-log');
+      if (log) {
+        addMissionLog('Starlink Group 17-43', 'Falcon 9');
+        addMissionLog('Starlink Group 10-35', 'Falcon 9');
+        addMissionLog('NROL-179', 'Falcon 9');
+      }
+      
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 'l' || e.key === ' ') {
+          e.preventDefault();
+          simulateLaunch();
+        }
+        if (e.key.toLowerCase() === 'r') {
+          e.preventDefault();
+          resetToOfficial();
+        }
+      });
+
+      // Hint
+      console.log('%c[SpaceX 2026 Counter] Press L or Space to simulate a launch. R to reset.', 'color:#64748b');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
