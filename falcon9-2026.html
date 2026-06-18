@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falcon 9 Launches 2026 • 68 Missions</title>
+  <title>Falcon 9 Launches 2026 â¢ 68 Missions</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -47,11 +47,11 @@
       <div>
         <div class="text-sm text-[#3b82f6] font-medium tracking-[2px]">FALCON 9 FAMILY</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">2026 Launches</h1>
-        <p class="mt-1 text-xl text-white/70">68 missions • YTD as of June 13, 2026</p>
+        <p class="mt-1 text-xl text-white/70">68 missions â¢ YTD as of June 13, 2026</p>
       </div>
       <div class="text-right hidden sm:block">
-        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]">68</div>
-        <div class="text-xs text-white/50">of ~140–160 target</div>
+        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]">70</div>
+        <div class="text-xs text-white/50">of ~140â160 target</div>
       </div>
     </div>
 
@@ -94,13 +94,13 @@
     </div>
 
     <div class="mt-3 text-xs text-white/50 flex items-center justify-between px-1">
-      <div>Showing <span id="visible-count"></span> of 68 Falcon 9 launches (demo selection)</div>
-      <div>Full historical data: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white">Wikipedia</a> • <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white">SpaceX</a></div>
+      <div>Showing <span id="visible-count"></span> of 70 Falcon 9 launches (demo selection)</div>
+      <div>Full historical data: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white">Wikipedia</a> â¢ <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white">SpaceX</a></div>
     </div>
   </div>
 
   <footer class="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> • Data approximate for illustration
+    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> â¢ Data approximate for illustration
   </footer>
 
   <script>
@@ -126,23 +126,23 @@
     // Realistic 2026 Falcon 9 missions (curated selection representing the ~68 YTD)
     const missions = [
       { date: "2026-01-03", mission: "CSG-3", site: "Vandenberg SLC-4E", payload: "CSG-3 (ASI)", booster: "B1082-1", outcome: "Success" },
-      { date: "2026-01-04", mission: "Starlink Group 6-88", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1076-10", outcome: "Success" },
-      { date: "2026-01-07", mission: "Starlink Group 6-35", site: "Cape Canaveral SLC-40", payload: "Starlink × 23", booster: "B1061-18", outcome: "Success" },
-      { date: "2026-01-15", mission: "Starlink Group 6-37", site: "Cape Canaveral SLC-40", payload: "Starlink × 23", booster: "B1073-12", outcome: "Success" },
-      { date: "2026-02-10", mission: "Starlink Group 10-47", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1078-21", outcome: "Success" },
-      { date: "2026-03-12", mission: "Starlink Group 10-24", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1097-4", outcome: "Success" },
-      { date: "2026-04-14", mission: "Starlink Group 10-43", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1083-13", outcome: "Success" },
-      { date: "2026-04-30", mission: "Starlink 50th of 2026", site: "Vandenberg SLC-4E", payload: "Starlink × 25", booster: "B1067-16", outcome: "Success" },
-      { date: "2026-05-24", mission: "Starlink Group 10-58", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1076-12", outcome: "Success" },
-      { date: "2026-05-30", mission: "Starlink Group 17-35", site: "Vandenberg SLC-4E", payload: "Starlink × 25", booster: "B1093-4", outcome: "Success" },
-      { date: "2026-06-04", mission: "Starlink Group 10-43", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1081-14", outcome: "Success" },
-      { date: "2026-06-07", mission: "Starlink Group 17-43", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1097-5", outcome: "Success" },
-      { date: "2026-06-08", mission: "Starlink Group 10-35", site: "Cape Canaveral SLC-40", payload: "Starlink × 21", booster: "B1078-22", outcome: "Success" },
-      { date: "2026-06-10", mission: "Starlink Group 17-47", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1082-4", outcome: "Success" },
-      { date: "2026-06-11", mission: "Starlink Group 17-54", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1077-22", outcome: "Success" },
-      { date: "2026-06-12", mission: "Bluebird 8-10 Mission", site: "Cape Canaveral SLC-40", payload: "Bluebird × 3", booster: "B1063-26", outcome: "Success" },
+      { date: "2026-01-04", mission: "Starlink Group 6-88", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1076-10", outcome: "Success" },
+      { date: "2026-01-07", mission: "Starlink Group 6-35", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 23", booster: "B1061-18", outcome: "Success" },
+      { date: "2026-01-15", mission: "Starlink Group 6-37", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 23", booster: "B1073-12", outcome: "Success" },
+      { date: "2026-02-10", mission: "Starlink Group 10-47", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1078-21", outcome: "Success" },
+      { date: "2026-03-12", mission: "Starlink Group 10-24", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1097-4", outcome: "Success" },
+      { date: "2026-04-14", mission: "Starlink Group 10-43", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1083-13", outcome: "Success" },
+      { date: "2026-04-30", mission: "Starlink 50th of 2026", site: "Vandenberg SLC-4E", payload: "Starlink Ã 25", booster: "B1067-16", outcome: "Success" },
+      { date: "2026-05-24", mission: "Starlink Group 10-58", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1076-12", outcome: "Success" },
+      { date: "2026-05-30", mission: "Starlink Group 17-35", site: "Vandenberg SLC-4E", payload: "Starlink Ã 25", booster: "B1093-4", outcome: "Success" },
+      { date: "2026-06-04", mission: "Starlink Group 10-43", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 29", booster: "B1081-14", outcome: "Success" },
+      { date: "2026-06-07", mission: "Starlink Group 17-43", site: "Vandenberg SLC-4E", payload: "Starlink Ã 24", booster: "B1097-5", outcome: "Success" },
+      { date: "2026-06-08", mission: "Starlink Group 10-35", site: "Cape Canaveral SLC-40", payload: "Starlink Ã 21", booster: "B1078-22", outcome: "Success" },
+      { date: "2026-06-10", mission: "Starlink Group 17-47", site: "Vandenberg SLC-4E", payload: "Starlink Ã 24", booster: "B1082-4", outcome: "Success" },
+      { date: "2026-06-11", mission: "Starlink Group 17-54", site: "Vandenberg SLC-4E", payload: "Starlink Ã 24", booster: "B1077-22", outcome: "Success" },
+      { date: "2026-06-12", mission: "Bluebird 8-10 Mission", site: "Cape Canaveral SLC-40", payload: "Bluebird Ã 3", booster: "B1063-26", outcome: "Success" },
       { date: "2026-06-12", mission: "NROL-179", site: "Vandenberg SLC-4E", payload: "NROL-179 (NRO)", booster: "B1083-13", outcome: "Success" },
-      { date: "2026-06-13", mission: "Starlink Group 17-22", site: "Vandenberg SLC-4E", payload: "Starlink × 25", booster: "B1073-13", outcome: "Success" }
+      { date: "2026-06-13", mission: "Starlink Group 17-22", site: "Vandenberg SLC-4E", payload: "Starlink Ã 25", booster: "B1073-13", outcome: "Success" }
     ];
 
     function renderTable(filteredMissions) {
