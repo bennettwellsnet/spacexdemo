@@ -47,11 +47,11 @@
       <div>
         <div class="text-sm text-[#f97316] font-medium tracking-[2px]">STARSHIP PROGRAM</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">Flights & Tests</h1>
-        <p class="mt-1 text-xl text-white/70">All tests reaching space since program inception • Current as of June 13, 2026</p>
+        <p class="mt-1 text-xl text-white/70">All tests reaching space since program inception • Current as of July 21, 2026</p>
       </div>
       <div class="text-right hidden sm:block">
-        <div class="text-4xl font-semibold tabular-nums text-[#f97316]">3</div>
-        <div class="text-xs text-white/50">significant 2026 space-reaching tests</div>
+        <div class="text-4xl font-semibold tabular-nums text-[#f97316]">1</div>
+        <div class="text-xs text-white/50">significant 2026 space-reaching test</div>
       </div>
     </div>
 
@@ -126,20 +126,20 @@
       }
     }
 
-    // Starship flights & tests across all years (demo selection; focused on those reaching space)
+    // Starship flights & tests (approximate; focused on space-reaching tests)
     const missions = [
-      { date: "2023-04-20", flight: "Flight 1 (IFT-1)", type: "Suborbital test", outcome: "Partial success", notes: "First Starship test flight; reached space" },
-      { date: "2023-11-18", flight: "Flight 2 (IFT-2)", type: "Suborbital test", outcome: "Partial success", notes: "Reached space; booster test" },
-      { date: "2024-03-14", flight: "Flight 3 (IFT-3)", type: "Suborbital test", outcome: "Success", notes: "Reached space; improved performance" },
-      { date: "2024-06-06", flight: "Flight 4 (IFT-4)", type: "Suborbital test", outcome: "Success", notes: "Reached space; booster catch attempt" },
-      { date: "2024-10-13", flight: "Flight 5 (IFT-5)", type: "Suborbital test", outcome: "Success", notes: "First successful booster catch" },
-      { date: "2025-02-10", flight: "Flight 6", type: "Suborbital test", outcome: "Partial success", notes: "Reached space" },
-      { date: "2025-05-20", flight: "Flight 7", type: "Suborbital / Orbital attempt", outcome: "Success", notes: "Reached space; ship test" },
-      { date: "2025-09-15", flight: "Flight 8", type: "Suborbital test", outcome: "Success", notes: "Reached space; heat shield improvements" },
-      { date: "2026-01-15", flight: "Flight 9", type: "Suborbital test", outcome: "Success", notes: "Reached space; booster landing test" },
-      { date: "2026-02-28", flight: "Flight 10", type: "Suborbital test", outcome: "Partial success", notes: "High altitude; ship RUD after reentry" },
-      { date: "2026-04-05", flight: "Flight 11", type: "Suborbital test", outcome: "Success", notes: "Reached space; improved heat shield" },
-      { date: "2026-05-22", flight: "Flight 12", type: "Suborbital test", outcome: "Partial success", notes: "Reached space; booster catch attempt" }
+      { date: "2023-04-20", flight: "Flight 1 (IFT-1)", type: "Integrated flight test", outcome: "Partial success", notes: "First integrated flight; lost control after ascent" },
+      { date: "2023-11-18", flight: "Flight 2 (IFT-2)", type: "Integrated flight test", outcome: "Partial success", notes: "Hot-staging success; both stages lost later" },
+      { date: "2024-03-14", flight: "Flight 3 (IFT-3)", type: "Integrated flight test", outcome: "Success", notes: "Reached space; ship lost on reentry" },
+      { date: "2024-06-06", flight: "Flight 4 (IFT-4)", type: "Integrated flight test", outcome: "Success", notes: "Controlled splashdowns for booster and ship" },
+      { date: "2024-10-13", flight: "Flight 5 (IFT-5)", type: "Integrated flight test", outcome: "Success", notes: "First successful booster tower catch" },
+      { date: "2024-11-19", flight: "Flight 6 (IFT-6)", type: "Integrated flight test", outcome: "Success", notes: "Final Block 1 ship; booster diverted to ocean" },
+      { date: "2025-01-16", flight: "Flight 7", type: "Block 2 debut", outcome: "Partial success", notes: "Booster catch success; ship lost on ascent" },
+      { date: "2025-03-06", flight: "Flight 8", type: "Integrated flight test", outcome: "Partial success", notes: "Booster catch; ship lost control mid-burn" },
+      { date: "2025-05-27", flight: "Flight 9", type: "Integrated flight test", outcome: "Partial success", notes: "First reused Super Heavy; both stages lost late" },
+      { date: "2025-08-26", flight: "Flight 10", type: "Integrated flight test", outcome: "Success", notes: "Starlink simulators deployed; soft ocean splashdowns" },
+      { date: "2025-10-13", flight: "Flight 11", type: "Final Block 2", outcome: "Success", notes: "Last flight from Pad 1 before retrofit" },
+      { date: "2026-05-22", flight: "Flight 12", type: "Block 3 / Pad 2 debut", outcome: "Success", notes: "First V3 vehicles & Raptor 3; Starlink imagers deployed" }
     ];
 
     function renderTable(filteredMissions) {
