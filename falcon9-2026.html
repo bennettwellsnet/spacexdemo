@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falcon 9 Launches 2026 • 86 Missions</title>
+  <title>Falcon 9 Launches 2026 • 87 Missions</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -47,10 +47,10 @@
       <div>
         <div class="text-sm text-[#3b82f6] font-medium tracking-[2px]">FALCON 9 FAMILY</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">2026 Launches</h1>
-        <p class="mt-1 text-xl text-white/70">86 missions • YTD as of July 21, 2026</p>
+        <p class="mt-1 text-xl text-white/70">87 missions • YTD as of July 29, 2026</p>
       </div>
       <div class="text-right hidden sm:block">
-        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]">86</div>
+        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]">87</div>
         <div class="text-xs text-white/50">of ~140–160 target</div>
       </div>
     </div>
@@ -95,13 +95,13 @@
     </div>
 
     <div class="mt-3 text-xs text-white/50 flex items-center justify-between px-1">
-      <div>Showing <span id="visible-count"></span> of 86 Falcon 9 launches (demo selection)</div>
-      <div>Full historical data: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white">Wikipedia</a> â¢ <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white">SpaceX</a></div>
+      <div>Showing <span id="visible-count"></span> of 87 Falcon 9 launches (demo selection)</div>
+      <div>Full historical data: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white">Wikipedia</a> • <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white">SpaceX</a></div>
     </div>
   </div>
 
   <footer class="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> â¢ Data approximate for illustration
+    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> • Data approximate for illustration
   </footer>
 
   <script>
@@ -124,7 +124,7 @@
       }
     }
 
-    // Realistic 2026 Falcon 9 missions (curated selection representing the ~86 YTD)
+    // Realistic 2026 Falcon 9 missions (curated selection representing the ~87 YTD)
     const missions = [
       { date: "2026-01-04", mission: "Starlink Group 6-88", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1101-1", outcome: "Success" },
       { date: "2026-01-10", mission: "NROL-153", site: "Vandenberg SLC-4E", payload: "Starshield × 22", booster: "B1071-22", outcome: "Success" },
@@ -142,7 +142,8 @@
       { date: "2026-07-14", mission: "Starlink Group 10-45", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1080-28", outcome: "Success" },
       { date: "2026-07-16", mission: "SDA Tranche 1 Mission 3", site: "Vandenberg SLC-4E", payload: "SDA Tranche 1", booster: "B1082-22", outcome: "Success" },
       { date: "2026-07-21", mission: "Starlink Group 17-39", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1082-23", outcome: "Success" },
-      { date: "2026-07-21", mission: "MRV-MEP Mission", site: "Cape Canaveral SLC-40", payload: "MRV-MEP", booster: "Expended", outcome: "Success" }
+      { date: "2026-07-21", mission: "MRV-MEP Mission", site: "Cape Canaveral SLC-40", payload: "MRV-MEP", booster: "Expended", outcome: "Success" },
+      { date: "2026-07-25", mission: "Starlink Group 17-51", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1082-24", outcome: "Success" }
     ];
 
     function renderTable(filteredMissions) {
