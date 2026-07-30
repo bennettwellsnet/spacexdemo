@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Starship Program • Flights & Tests</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
     body { font-family: 'Inter', system_ui, sans-serif; }
@@ -98,7 +98,7 @@
 
     <div class="mt-3 text-xs text-white/50 flex items-center justify-between px-1">
       <div>Showing <span id="visible-count"></span> of Starship program flights (demo selection of tests that reached space across all years)</div>
-      <div>Full details: <a href="https://en.wikipedia.org/wiki/2026_in_spaceflight" target="_blank" class="underline hover:text-white">Wikipedia 2026 in spaceflight</a> • <a href="https://www.spacex.com/vehicles/starship" target="_blank" class="underline hover:text-white">SpaceX Starship</a></div>
+      <div>Full details: <a href="https://en.wikipedia.org/wiki/2026_in_spaceflight" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">Wikipedia 2026 in spaceflight</a> • <a href="https://www.spacex.com/vehicles/starship" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">SpaceX Starship</a></div>
     </div>
   </div>
 
@@ -143,6 +143,16 @@
       { date: "2026-07-24", flight: "Flight 13", type: "Integrated flight test", outcome: "Success", notes: "Second V3 flight; first Starlink V3 satellite deploy; soft Indian Ocean splashdown with intact heatshield views" }
     ];
 
+    
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     function renderTable(filteredMissions) {
       const tbody = document.getElementById('missions-tbody');
       tbody.innerHTML = '';
@@ -154,13 +164,13 @@
                            m.outcome === 'Partial success' ? 'bg-amber-500/20 text-amber-400' : 
                            'bg-blue-500/20 text-blue-400';
         row.innerHTML = `
-          <td class="px-6 py-3 font-mono text-xs text-white/70">${m.date}</td>
-          <td class="px-6 py-3 font-medium">${m.flight}</td>
-          <td class="px-6 py-3 text-xs text-white/70">${m.type}</td>
+          <td class="px-6 py-3 font-mono text-xs text-white/70">${escapeHtml(m.date)}</td>
+          <td class="px-6 py-3 font-medium">${escapeHtml(m.flight)}</td>
+          <td class="px-6 py-3 text-xs text-white/70">${escapeHtml(m.type)}</td>
           <td class="px-6 py-3 text-center">
-            <span class="inline-block text-[10px] px-2.5 py-px rounded-full ${outcomeClass}">${m.outcome}</span>
+            <span class="inline-block text-[10px] px-2.5 py-px rounded-full ${outcomeClass}">${escapeHtml(m.outcome)}</span>
           </td>
-          <td class="px-6 py-3 text-xs">${m.notes}</td>
+          <td class="px-6 py-3 text-xs">${escapeHtml(m.notes)}</td>
         `;
         tbody.appendChild(row);
       });
