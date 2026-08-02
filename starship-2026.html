@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    if (location.pathname.startsWith('/spacexdemo')) {
+      const b = document.createElement('base');
+      b.href = '/spacexdemo/';
+      document.head.insertBefore(b, document.head.firstChild);
+    }
+  </script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
 
   <meta charset="UTF-8">
@@ -49,7 +56,7 @@
       <div>
         <div class="text-sm text-[#f97316] font-medium tracking-[2px]">STARSHIP PROGRAM</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">Flights & Tests</h1>
-        <p class="mt-1 text-xl text-white/70">All tests reaching space since program inception • Current as of July 29, 2026</p>
+        <p class="mt-1 text-xl text-white/70">All tests reaching space since program inception • Current as of August 2, 2026</p>
       </div>
       <div class="text-right hidden sm:block">
         <div class="text-4xl font-semibold tabular-nums text-[#f97316]">2</div>
