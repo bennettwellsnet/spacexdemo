@@ -182,25 +182,54 @@
     </div>
   </div>
 
-  <!-- Goal Progress -->
+  <!-- Goal Progress + pace extrapolation -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 pb-12">
-    <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
-      <div class="flex justify-between items-baseline mb-3">
+    <div class="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
         <div>
-          <div class="font-semibold">2026 Launch Pace</div>
-          <div class="text-xs text-white/50">SpaceX target cadence: ~140–160 missions</div>
+          <div class="font-semibold text-lg">2026 Launch Pace</div>
+          <div class="text-xs text-white/50 mt-1 max-w-md">
+            Year-end figure is a simple linear extrapolation from YTD launches ÷ days elapsed × 365 — not a SpaceX forecast.
+          </div>
         </div>
-        <div class="text-right">
-          <span class="font-mono text-2xl font-semibold tabular-nums" id="goal-current">92</span>
-          <span class="text-white/60"> / 160</span>
+        <div class="text-left sm:text-right shrink-0">
+          <div class="text-[10px] uppercase tracking-wider text-white/40 mb-1">Pace projects</div>
+          <div class="font-mono text-4xl font-semibold tabular-nums text-[#f97316]" id="pace-projected">—</div>
+          <div class="text-xs text-white/50">launches by Dec 31</div>
         </div>
       </div>
-      <div class="h-3 bg-white/10 rounded-full overflow-hidden">
-        <div id="goal-progress" class="h-3 bg-gradient-to-r from-[#3b82f6] to-[#f97316] rounded-full progress-bar" style="width: 58%"></div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div class="bg-black/30 border border-white/5 rounded-2xl px-3 py-3">
+          <div class="font-mono text-xl font-semibold tabular-nums" id="goal-current">92</div>
+          <div class="text-[10px] text-white/45 mt-0.5 uppercase tracking-wide">YTD launches</div>
+        </div>
+        <div class="bg-black/30 border border-white/5 rounded-2xl px-3 py-3">
+          <div class="font-mono text-xl font-semibold tabular-nums" id="pace-per-day">—</div>
+          <div class="text-[10px] text-white/45 mt-0.5 uppercase tracking-wide">per day so far</div>
+        </div>
+        <div class="bg-black/30 border border-white/5 rounded-2xl px-3 py-3">
+          <div class="font-mono text-xl font-semibold tabular-nums" id="pace-days-in">—</div>
+          <div class="text-[10px] text-white/45 mt-0.5 uppercase tracking-wide">days elapsed</div>
+        </div>
+        <div class="bg-black/30 border border-white/5 rounded-2xl px-3 py-3">
+          <div class="font-mono text-xl font-semibold tabular-nums" id="pace-days-left">—</div>
+          <div class="text-[10px] text-white/45 mt-0.5 uppercase tracking-wide">days remaining</div>
+        </div>
       </div>
-      <div class="flex justify-between text-xs text-white/50 mt-2">
-        <div>58% of ambitious target</div>
-        <div>On pace for record year</div>
+
+      <div>
+        <div class="flex justify-between items-baseline mb-2 text-xs text-white/50">
+          <span>Progress vs ambitious target (~160)</span>
+          <span><span id="goal-pct-label">—</span>% of 160</span>
+        </div>
+        <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+          <div id="goal-progress" class="h-3 bg-gradient-to-r from-[#3b82f6] to-[#f97316] rounded-full progress-bar" style="width: 0%"></div>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:justify-between gap-1 text-xs text-white/45 mt-2">
+          <div id="pace-summary">—</div>
+          <div class="text-white/35">160 is a public cadence goal, not the extrapolated total</div>
+        </div>
       </div>
     </div>
   </div>
@@ -295,6 +324,29 @@
     }
 
     let currentCount = 92, f9Count = 89, starshipCount = 2, fhCount = 1;
+    /** Snapshot date for YTD count — pace uses this day-of-year so math matches the published total. */
+    const SNAPSHOT_Y = 2026, SNAPSHOT_M = 7, SNAPSHOT_D = 2; // Aug 2, 2026 (0-based month)
+    const AMBITIOUS_TARGET = 160;
+
+    function dayOfYear(y, m0, d) {
+      const start = Date.UTC(y, 0, 1);
+      const cur = Date.UTC(y, m0, d);
+      return Math.floor((cur - start) / 86400000) + 1;
+    }
+
+    function daysInYear(y) {
+      return ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) ? 366 : 365;
+    }
+
+    /** Linear year-end extrapolation: (YTD / days elapsed) × days in year */
+    function paceProjection(count) {
+      const diy = daysInYear(SNAPSHOT_Y);
+      const daysIn = Math.max(1, dayOfYear(SNAPSHOT_Y, SNAPSHOT_M, SNAPSHOT_D));
+      const daysLeft = Math.max(0, diy - daysIn);
+      const perDay = count / daysIn;
+      const projected = Math.round(perDay * diy);
+      return { daysIn, daysLeft, diy, perDay, projected };
+    }
 
     function updateMainCounter(newValue) {
       const el = document.getElementById('main-counter');
@@ -313,9 +365,29 @@
     function updateBreakdown() {
       const f9 = document.getElementById('f9-count'), ss = document.getElementById('starship-count'), fh = document.getElementById('fh-count');
       if (f9) f9.textContent = f9Count; if (ss) ss.textContent = starshipCount; if (fh) fh.textContent = fhCount;
-      const pct = Math.min(Math.round((currentCount / 160) * 100), 100);
-      const bar = document.getElementById('goal-progress'), currentEl = document.getElementById('goal-current');
-      if (bar) bar.style.width = pct + '%'; if (currentEl) currentEl.textContent = currentCount;
+
+      const pace = paceProjection(currentCount);
+      const pct = Math.min(Math.round((currentCount / AMBITIOUS_TARGET) * 100), 100);
+      const bar = document.getElementById('goal-progress');
+      const currentEl = document.getElementById('goal-current');
+      if (bar) bar.style.width = pct + '%';
+      if (currentEl) currentEl.textContent = currentCount;
+
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('pace-projected', '~' + pace.projected);
+      set('pace-per-day', pace.perDay.toFixed(2));
+      set('pace-days-in', String(pace.daysIn));
+      set('pace-days-left', String(pace.daysLeft));
+      set('goal-pct-label', String(pct));
+
+      const vs = pace.projected - AMBITIOUS_TARGET;
+      const vsLabel = vs === 0
+        ? 'matches the ~160 ambitious target'
+        : vs > 0
+          ? '~' + vs + ' above the ambitious ~160 target'
+          : '~' + Math.abs(vs) + ' below the ambitious ~160 target';
+      set('pace-summary',
+        pace.daysIn + ' days in → ~' + pace.projected + ' year-end at this rate (' + vsLabel + ')');
     }
 
     const missionNames = ['Starlink Group 17-51','Starlink Group 10-45','MRV-MEP','Starlink Group 17-39','SDA Tranche 1','Starlink Group 10-50','Transporter-17','Tranche 1 Transport Layer'];
