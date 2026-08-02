@@ -34,18 +34,9 @@
       0% { opacity: 0.3; }
       100% { opacity: 1; }
     }
-    .rocket-icon {
-      transition: transform 0.2s ease;
-    }
-    .launch-btn:active .rocket-icon {
-      transform: translateY(-8px) rotate(12deg);
-    }
     .counter {
       font-variant-numeric: tabular-nums;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .mission-log {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
     .stat-card {
       transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,6 +45,9 @@
       transform: translateY(-2px);
     }
     .progress-bar {
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mass-bar {
       transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
@@ -234,32 +228,86 @@
     </div>
   </div>
 
-  <!-- Interactive Simulator -->
+  <!-- Mass to orbit: SpaceX vs rest of world -->
   <div class="relative z-10 max-w-5xl mx-auto px-6 pb-12">
-    <div class="flex items-center justify-between mb-4 px-1">
-      <div>
-        <span class="font-semibold text-xl">Mission Simulator</span>
-        <span class="text-xs text-white/50 ml-2">(for fun — demo only)</span>
-      </div>
-      <button onclick="resetToOfficial()" class="text-xs px-3 py-1 rounded-xl border border-white/20 hover:bg-white/5 transition">
-        Reset to official count
-      </button>
+    <div class="px-1 mb-4">
+      <span class="font-semibold text-xl">Mass to Orbit</span>
+      <span class="text-xs text-white/50 ml-2">SpaceX vs rest of world · payload tonnage</span>
     </div>
-    <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
-      <div class="flex flex-col md:flex-row gap-8 items-center">
-        <div class="flex-1 text-center">
-          <button onclick="simulateLaunch()" class="launch-btn group inline-flex flex-col items-center justify-center px-10 py-6 bg-white text-black font-semibold rounded-3xl hover:bg-white active:scale-[0.985] transition shadow-xl">
-            <div class="flex items-center gap-x-3 text-xl">
-              <i class="fa-solid fa-rocket rocket-icon text-[#f97316] group-active:-translate-y-1 transition-transform"></i>
-              <span>Record Next Launch</span>
-            </div>
-            <div class="text-xs text-black/50 mt-1">Adds a real-style mission</div>
-          </button>
+    <div class="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-8">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div class="max-w-xl">
+          <div class="text-[10px] uppercase tracking-wider text-white/40 mb-1">Share of world payload mass (YTD)</div>
+          <div class="font-mono text-5xl sm:text-6xl font-semibold tabular-nums text-[#f97316]" id="mass-share">—</div>
+          <p class="text-sm text-white/55 mt-2 leading-relaxed">
+            Estimated payload mass delivered to orbit — not launch vehicle dry mass.
+            Starlink-heavy Falcon cadence drives most of the global total.
+          </p>
         </div>
-        <div class="flex-1 w-full">
-          <div class="text-xs uppercase tracking-widest text-white/50 mb-2 px-1">Mission Log (simulated)</div>
-          <div id="mission-log" class="mission-log bg-black/60 border border-white/10 rounded-2xl p-4 h-[148px] overflow-auto text-xs space-y-1.5 text-white/80"></div>
+        <div class="grid grid-cols-2 gap-3 w-full lg:w-auto lg:min-w-[280px]">
+          <div class="bg-black/35 border border-[#f97316]/25 rounded-2xl px-4 py-3">
+            <div class="text-[10px] uppercase tracking-wide text-[#f97316]/80">SpaceX YTD</div>
+            <div class="font-mono text-2xl font-semibold tabular-nums mt-1" id="mass-sx-ytd">—</div>
+            <div class="text-[11px] text-white/40">metric tons</div>
+          </div>
+          <div class="bg-black/35 border border-white/10 rounded-2xl px-4 py-3">
+            <div class="text-[10px] uppercase tracking-wide text-white/45">Rest of world YTD</div>
+            <div class="font-mono text-2xl font-semibold tabular-nums mt-1" id="mass-row-ytd">—</div>
+            <div class="text-[11px] text-white/40">metric tons</div>
+          </div>
         </div>
+      </div>
+
+      <!-- Stacked comparison bar -->
+      <div>
+        <div class="flex justify-between text-[11px] text-white/50 mb-2">
+          <span class="text-[#f97316]">SpaceX</span>
+          <span>Rest of world</span>
+        </div>
+        <div class="h-10 rounded-2xl overflow-hidden flex bg-white/10 border border-white/10">
+          <div id="mass-bar-sx" class="mass-bar h-full bg-gradient-to-r from-[#ea580c] to-[#f97316] flex items-center justify-end pr-3 min-w-0" style="width:0%">
+            <span class="text-xs font-semibold text-black/80 tabular-nums hidden sm:inline" id="mass-bar-sx-label"></span>
+          </div>
+          <div id="mass-bar-row" class="mass-bar h-full bg-gradient-to-r from-zinc-600 to-zinc-500 flex items-center pl-3 min-w-0" style="width:0%">
+            <span class="text-xs font-semibold text-white/90 tabular-nums hidden sm:inline" id="mass-bar-row-label"></span>
+          </div>
+        </div>
+        <div class="flex justify-between text-[11px] text-white/40 mt-2 tabular-nums">
+          <span id="mass-ratio-label">—</span>
+          <span id="mass-world-ytd">—</span>
+        </div>
+      </div>
+
+      <!-- Year-end mass extrapolation -->
+      <div class="border-t border-white/10 pt-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <div>
+            <div class="font-semibold">Pace → year-end mass</div>
+            <div class="text-xs text-white/45 mt-0.5">Same linear rate as launch pace (YTD ÷ days elapsed × 365)</div>
+          </div>
+          <div class="text-xs text-white/40">Demo estimates · not official telemetry</div>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="bg-black/30 border border-[#f97316]/20 rounded-2xl p-4 text-center sm:text-left">
+            <div class="text-[10px] uppercase tracking-wide text-[#f97316]/80">SpaceX projected</div>
+            <div class="font-mono text-3xl font-semibold tabular-nums mt-1 text-[#f97316]" id="mass-sx-ye">—</div>
+            <div class="text-[11px] text-white/40">t by Dec 31</div>
+          </div>
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-4 text-center sm:text-left">
+            <div class="text-[10px] uppercase tracking-wide text-white/45">Rest of world projected</div>
+            <div class="font-mono text-3xl font-semibold tabular-nums mt-1" id="mass-row-ye">—</div>
+            <div class="text-[11px] text-white/40">t by Dec 31</div>
+          </div>
+          <div class="bg-black/30 border border-white/10 rounded-2xl p-4 text-center sm:text-left">
+            <div class="text-[10px] uppercase tracking-wide text-white/45">World total projected</div>
+            <div class="font-mono text-3xl font-semibold tabular-nums mt-1" id="mass-world-ye">—</div>
+            <div class="text-[11px] text-white/40">t · SpaceX <span id="mass-share-ye">—</span></div>
+          </div>
+        </div>
+        <p class="text-[11px] text-white/40 mt-4 leading-relaxed" id="mass-footnote">
+          Anchored to public 2026 payload-tonnage tallies (country totals ~1.5kt YTD; USA-dominated).
+          SpaceX share of US mass is estimated (~94%) given Starlink’s weight; figures are approximate.
+        </p>
       </div>
     </div>
   </div>
@@ -299,7 +347,7 @@
   <div class="relative z-10 border-t border-white/10">
     <div class="max-w-5xl mx-auto px-6 py-8 text-xs text-white/50">
       <div class="flex flex-col md:flex-row md:items-center gap-y-2 md:justify-between">
-        <div>Data is approximate and based on public sources (SpaceX manifest, Wikipedia, NextSpaceflight, SpaceXNow) as of August 2, 2026. For live updates visit <a href="https://www.spacex.com/launches" class="underline hover:text-white/80" target="_blank" rel="noopener noreferrer">spacex.com/launches</a>.</div>
+        <div>Launch counts &amp; mass estimates are approximate (SpaceX manifest, public payload-tonnage tallies, NextSpaceflight, SpaceXNow) as of August 2, 2026. For live updates visit <a href="https://www.spacex.com/launches" class="underline hover:text-white/80" target="_blank" rel="noopener noreferrer">spacex.com/launches</a>.</div>
         <div>Demo page • <a href="https://github.com/bennettwellsnet/spacexdemo" class="underline hover:text-white/80" target="_blank" rel="noopener noreferrer">bennettwellsnet/spacexdemo</a></div>
       </div>
     </div>
@@ -323,10 +371,18 @@
       }
     }
 
-    let currentCount = 92, f9Count = 89, starshipCount = 2, fhCount = 1;
-    /** Snapshot date for YTD count — pace uses this day-of-year so math matches the published total. */
+    const currentCount = 92, f9Count = 89, starshipCount = 2, fhCount = 1;
+    /** Snapshot date for YTD — pace uses this day-of-year so math matches the published total. */
     const SNAPSHOT_Y = 2026, SNAPSHOT_M = 7, SNAPSHOT_D = 2; // Aug 2, 2026 (0-based month)
     const AMBITIOUS_TARGET = 160;
+
+    /**
+     * Payload mass to orbit (metric tons) — demo estimates for 2026 YTD.
+     * Anchored to public country payload-tonnage tallies (~1,534 t world / ~1,332 t USA YTD)
+     * with ~94% of US mass attributed to SpaceX (Starlink-dominated). Not official.
+     */
+    const MASS_SX_YTD_T = 1252;
+    const MASS_ROW_YTD_T = 282; // everyone else, including non-SpaceX US
 
     function dayOfYear(y, m0, d) {
       const start = Date.UTC(y, 0, 1);
@@ -339,46 +395,42 @@
     }
 
     /** Linear year-end extrapolation: (YTD / days elapsed) × days in year */
-    function paceProjection(count) {
+    function paceProjection(value) {
       const diy = daysInYear(SNAPSHOT_Y);
       const daysIn = Math.max(1, dayOfYear(SNAPSHOT_Y, SNAPSHOT_M, SNAPSHOT_D));
       const daysLeft = Math.max(0, diy - daysIn);
-      const perDay = count / daysIn;
+      const perDay = value / daysIn;
       const projected = Math.round(perDay * diy);
       return { daysIn, daysLeft, diy, perDay, projected };
     }
 
-    function updateMainCounter(newValue) {
-      const el = document.getElementById('main-counter');
-      if (!el) return;
-      const start = parseInt(el.textContent) || currentCount, end = newValue;
-      const duration = 600, startTime = performance.now();
-      function animate(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        el.textContent = Math.floor(start + (end - start) * progress);
-        if (progress < 1) requestAnimationFrame(animate);
-        else { el.textContent = end; currentCount = end; }
-      }
-      requestAnimationFrame(animate);
+    function formatTons(n) {
+      return Math.round(n).toLocaleString('en-US');
     }
 
-    function updateBreakdown() {
-      const f9 = document.getElementById('f9-count'), ss = document.getElementById('starship-count'), fh = document.getElementById('fh-count');
-      if (f9) f9.textContent = f9Count; if (ss) ss.textContent = starshipCount; if (fh) fh.textContent = fhCount;
+    function setText(id, val) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    }
+
+    function updateLaunchPace() {
+      const f9 = document.getElementById('f9-count');
+      const ss = document.getElementById('starship-count');
+      const fh = document.getElementById('fh-count');
+      if (f9) f9.textContent = f9Count;
+      if (ss) ss.textContent = starshipCount;
+      if (fh) fh.textContent = fhCount;
 
       const pace = paceProjection(currentCount);
       const pct = Math.min(Math.round((currentCount / AMBITIOUS_TARGET) * 100), 100);
       const bar = document.getElementById('goal-progress');
-      const currentEl = document.getElementById('goal-current');
       if (bar) bar.style.width = pct + '%';
-      if (currentEl) currentEl.textContent = currentCount;
-
-      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-      set('pace-projected', '~' + pace.projected);
-      set('pace-per-day', pace.perDay.toFixed(2));
-      set('pace-days-in', String(pace.daysIn));
-      set('pace-days-left', String(pace.daysLeft));
-      set('goal-pct-label', String(pct));
+      setText('goal-current', String(currentCount));
+      setText('pace-projected', '~' + pace.projected);
+      setText('pace-per-day', pace.perDay.toFixed(2));
+      setText('pace-days-in', String(pace.daysIn));
+      setText('pace-days-left', String(pace.daysLeft));
+      setText('goal-pct-label', String(pct));
 
       const vs = pace.projected - AMBITIOUS_TARGET;
       const vsLabel = vs === 0
@@ -386,58 +438,51 @@
         : vs > 0
           ? '~' + vs + ' above the ambitious ~160 target'
           : '~' + Math.abs(vs) + ' below the ambitious ~160 target';
-      set('pace-summary',
+      setText('pace-summary',
         pace.daysIn + ' days in → ~' + pace.projected + ' year-end at this rate (' + vsLabel + ')');
     }
 
-    const missionNames = ['Starlink Group 17-51','Starlink Group 10-45','MRV-MEP','Starlink Group 17-39','SDA Tranche 1','Starlink Group 10-50','Transporter-17','Tranche 1 Transport Layer'];
+    function updateMassToOrbit() {
+      const worldYtd = MASS_SX_YTD_T + MASS_ROW_YTD_T;
+      const share = worldYtd > 0 ? (MASS_SX_YTD_T / worldYtd) * 100 : 0;
+      const sxPct = Math.max(0, Math.min(100, share));
+      const rowPct = Math.max(0, 100 - sxPct);
 
-    function addMissionLog(name, type) {
-      type = type || 'Falcon 9';
-      const log = document.getElementById('mission-log');
-      if (!log) return;
-      const entry = document.createElement('div');
-      entry.className = 'flex justify-between items-center py-0.5 border-b border-white/10 last:border-0';
-      const safeName = name.replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
-      const safeType = type.replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
-      entry.innerHTML = '<div><span class="text-emerald-400">✓</span> <span>' + safeName + '</span></div><div class="text-[10px] text-white/50">' + safeType + ' • Success</div>';
-      log.prepend(entry);
-      while (log.children.length > 8) log.removeChild(log.lastChild);
-    }
+      const sxYe = paceProjection(MASS_SX_YTD_T).projected;
+      const rowYe = paceProjection(MASS_ROW_YTD_T).projected;
+      const worldYe = sxYe + rowYe;
+      const shareYe = worldYe > 0 ? (sxYe / worldYe) * 100 : 0;
+      const multiple = MASS_ROW_YTD_T > 0 ? (MASS_SX_YTD_T / MASS_ROW_YTD_T) : 0;
 
-    function simulateLaunch() {
-      const rand = Math.random();
-      let type = 'Falcon 9', name = missionNames[Math.floor(Math.random() * missionNames.length)];
-      if (rand < 0.12) { type = 'Starship'; starshipCount++; name = 'Starship Flight ' + (13 + Math.floor(Math.random()*3)); }
-      else if (rand < 0.15) { type = 'Falcon Heavy'; fhCount++; name = 'Falcon Heavy Mission'; }
-      else { f9Count++; }
-      currentCount++;
-      updateMainCounter(currentCount); updateBreakdown(); addMissionLog(name, type);
-      const btns = document.querySelectorAll('.launch-btn');
-      if (btns.length) { btns[0].classList.add('!bg-emerald-400'); setTimeout(() => btns[0].classList.remove('!bg-emerald-400'), 300); }
-    }
+      setText('mass-share', share.toFixed(1) + '%');
+      setText('mass-sx-ytd', '~' + formatTons(MASS_SX_YTD_T));
+      setText('mass-row-ytd', '~' + formatTons(MASS_ROW_YTD_T));
+      setText('mass-world-ytd', 'World YTD ~' + formatTons(worldYtd) + ' t');
+      setText('mass-ratio-label',
+        multiple >= 10
+          ? '~' + multiple.toFixed(0) + '× rest of world'
+          : '~' + multiple.toFixed(1) + '× rest of world');
 
-    function resetToOfficial() {
-      currentCount = 92; f9Count = 89; starshipCount = 2; fhCount = 1;
-      const mainEl = document.getElementById('main-counter');
-      if (mainEl) mainEl.textContent = currentCount;
-      updateBreakdown();
-      const log = document.getElementById('mission-log');
-      if (log) { log.innerHTML = ''; addMissionLog('Starlink Group 17-51','Falcon 9'); addMissionLog('Starship Flight 13','Starship'); }
+      const barSx = document.getElementById('mass-bar-sx');
+      const barRow = document.getElementById('mass-bar-row');
+      if (barSx) barSx.style.width = sxPct + '%';
+      if (barRow) barRow.style.width = rowPct + '%';
+      setText('mass-bar-sx-label', sxPct >= 12 ? share.toFixed(0) + '%' : '');
+      setText('mass-bar-row-label', rowPct >= 12 ? rowPct.toFixed(0) + '%' : '');
+
+      setText('mass-sx-ye', '~' + formatTons(sxYe));
+      setText('mass-row-ye', '~' + formatTons(rowYe));
+      setText('mass-world-ye', '~' + formatTons(worldYe));
+      setText('mass-share-ye', shareYe.toFixed(0) + '%');
     }
 
     function init() {
-      initTailwind(); createStars();
+      initTailwind();
+      createStars();
       const mainEl = document.getElementById('main-counter');
       if (mainEl) mainEl.textContent = currentCount;
-      updateBreakdown();
-      const log = document.getElementById('mission-log');
-      if (log) { addMissionLog('Starlink Group 17-51','Falcon 9'); addMissionLog('Starship Flight 13','Starship'); addMissionLog('MRV-MEP','Falcon 9'); }
-      document.addEventListener('keydown', (e) => {
-        if (e.key.toLowerCase() === 'l' || e.key === ' ') { e.preventDefault(); simulateLaunch(); }
-        if (e.key.toLowerCase() === 'r') { e.preventDefault(); resetToOfficial(); }
-      });
-      console.log('%c[SpaceX 2026 Counter] Press L or Space to simulate a launch. R to reset.', 'color:#64748b');
+      updateLaunchPace();
+      updateMassToOrbit();
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
