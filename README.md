@@ -17,6 +17,7 @@ python3 -m http.server 8080
 - `scripts/fetch_launches.py` — paginates LL2 for SpaceX 2026 (including suborbital Starship)
 - `launches.json` — fetched snapshot used by the site
 - Payload mass uses Launch Library 2 `payload_flights` when a mass is published; Starlink and other gaps still use class estimates (not telemetry)
+- SpaceXAI brief: set repo secret `XAI_API_KEY` (from [console.x.ai](https://console.x.ai)). The refresh Action writes a 2–3 sentence snapshot brief into `launches.json`. Local: `XAI_API_KEY=... python3 scripts/fetch_launches.py`
 
 ## Deploy
 
