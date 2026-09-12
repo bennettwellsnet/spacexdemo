@@ -9,7 +9,6 @@
     }
   </script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Starship Program • Flights & Tests</title>
@@ -22,15 +21,11 @@
     .space-bg { background: radial-gradient(circle at 50% 20%, #0a1429 0%, #020617 50%, #000000 100%); }
     .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 1.5s infinite alternate; }
     @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
-    .mission-table th { font-weight: 500; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .mission-row:hover { background-color: rgba(255,255,255,0.03); }
   </style>
 </head>
 <body class="bg-black text-white space-bg min-h-screen">
-  <!-- Stars -->
   <div id="stars" class="fixed inset-0 pointer-events-none z-0"></div>
-
-  <!-- Nav -->
   <nav class="relative z-50 border-b border-white/10 bg-black/60 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
@@ -43,40 +38,34 @@
         </div>
         <div>
           <a href="index.html" class="text-sm flex items-center gap-x-1.5 px-4 py-2 rounded-xl hover:bg-white/5 transition">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Back to Counter</span>
+            <i class="fa-solid fa-arrow-left"></i><span>Back to Counter</span>
           </a>
         </div>
       </div>
     </div>
   </nav>
-
   <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-6">
     <div class="flex items-end justify-between mb-8">
       <div>
         <div class="text-sm text-[#f97316] font-medium tracking-[2px]">STARSHIP PROGRAM</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">Flights & Tests</h1>
-        <p class="mt-1 text-xl text-white/70">Integrated flight tests since program inception • Current as of September 10, 2026</p>
+        <p class="mt-1 text-xl text-white/70" id="ss-as-of">Integrated flight tests since program inception • loading live 2026 flights…</p>
       </div>
       <div class="text-right hidden sm:block">
-        <div class="text-4xl font-semibold tabular-nums text-[#f97316]">2</div>
+        <div class="text-4xl font-semibold tabular-nums text-[#f97316]" id="ss-ytd">—</div>
         <div class="text-xs text-white/50">2026 flights (Flight 12–13) · Flight 14 next</div>
       </div>
     </div>
-
-    <!-- Controls -->
     <div class="flex flex-col sm:flex-row gap-3 mb-4">
       <div class="flex-1 relative">
         <i class="fa-solid fa-search absolute left-4 top-3.5 text-white/40"></i>
-        <input id="search" type="text" placeholder="Search flight or notes..." 
+        <input id="search" type="text" placeholder="Search flight or notes..."
                class="w-full bg-white/5 border border-white/10 pl-10 pr-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-white/30 placeholder:text-white/40">
       </div>
       <select id="year-filter" class="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-white/30">
         <option value="">All years</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
-        <option value="2026">2026</option>
+        <option value="2023">2023</option><option value="2024">2024</option>
+        <option value="2025">2025</option><option value="2026">2026</option>
       </select>
       <select id="outcome-filter" class="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-white/30">
         <option value="">All outcomes</option>
@@ -86,8 +75,6 @@
       </select>
       <button onclick="resetFilters()" class="px-4 py-3 text-sm border border-white/10 rounded-2xl hover:bg-white/5 transition">Reset</button>
     </div>
-
-    <!-- Table -->
     <div class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
@@ -104,151 +91,23 @@
         </table>
       </div>
     </div>
-
     <div class="mt-3 text-xs text-white/50 flex items-center justify-between px-1">
-      <div>Showing <span id="visible-count"></span> of Starship program flights (demo selection of tests that reached space across all years)</div>
-      <div>Full details: <a href="https://en.wikipedia.org/wiki/2026_in_spaceflight" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">Wikipedia 2026 in spaceflight</a> • <a href="https://www.spacex.com/vehicles/starship" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">SpaceX Starship</a></div>
+      <div>Showing <span id="visible-count"></span> of Starship program flights</div>
+      <div><a href="https://www.spacex.com/vehicles/starship" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">SpaceX Starship</a></div>
     </div>
   </div>
-
   <footer class="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> • Starship data is test-focused and approximate for illustration (full program history)
+    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a>
   </footer>
-
+  <script src="board.js"></script>
   <script>
-    function initTailwind() {
-      if (window.tailwind) tailwind.config = { theme: { extend: {} } };
-    }
-
-    function createStars() {
-      const container = document.getElementById('stars');
-      if (!container) return;
-      for (let i = 0; i < 90; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 2 + 0.6;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        container.appendChild(star);
-      }
-    }
-
-    // Starship flights & tests (approximate; focused on space-reaching tests)
-    const missions = [
-      { date: "2023-04-20", flight: "Flight 1 (IFT-1)", type: "Integrated flight test", outcome: "Partial success", notes: "First integrated flight; lost control after ascent" },
-      { date: "2023-11-18", flight: "Flight 2 (IFT-2)", type: "Integrated flight test", outcome: "Partial success", notes: "Hot-staging success; both stages lost later" },
-      { date: "2024-03-14", flight: "Flight 3 (IFT-3)", type: "Integrated flight test", outcome: "Success", notes: "Reached space; ship lost on reentry" },
-      { date: "2024-06-06", flight: "Flight 4 (IFT-4)", type: "Integrated flight test", outcome: "Success", notes: "Controlled splashdowns for booster and ship" },
-      { date: "2024-10-13", flight: "Flight 5 (IFT-5)", type: "Integrated flight test", outcome: "Success", notes: "First successful booster tower catch" },
-      { date: "2024-11-19", flight: "Flight 6 (IFT-6)", type: "Integrated flight test", outcome: "Success", notes: "Final Block 1 ship; booster diverted to ocean" },
-      { date: "2025-01-16", flight: "Flight 7", type: "Block 2 debut", outcome: "Partial success", notes: "Booster catch success; ship lost on ascent" },
-      { date: "2025-03-06", flight: "Flight 8", type: "Integrated flight test", outcome: "Partial success", notes: "Booster catch; ship lost control mid-burn" },
-      { date: "2025-05-27", flight: "Flight 9", type: "Integrated flight test", outcome: "Partial success", notes: "First reused Super Heavy; both stages lost late" },
-      { date: "2025-08-26", flight: "Flight 10", type: "Integrated flight test", outcome: "Success", notes: "Starlink simulators deployed; soft ocean splashdowns" },
-      { date: "2025-10-13", flight: "Flight 11", type: "Final Block 2", outcome: "Success", notes: "Last flight from Pad 1 before retrofit" },
-      { date: "2026-05-22", flight: "Flight 12", type: "Block 3 / Pad 2 debut", outcome: "Partial success", notes: "First V3 / Raptor 3 & OLP-2; ship soft splashdown; booster high-speed Gulf impact" },
-      { date: "2026-07-24", flight: "Flight 13", type: "Integrated flight test", outcome: "Success", notes: "Second V3 flight; first operational Starlink V3 deploy (20 sats); soft Indian Ocean splashdown with intact heatshield views" },
-      { date: "2026-09", flight: "Flight 14 (planned)", type: "Block 3 / first orbit", outcome: "Test", notes: "NET mid-September — first stable orbit + Starlink V3 to operational orbit (B21/S41). Ship tower catch deferred a few months (FAA)." }
-    ];
-
-    
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function renderTable(filteredMissions) {
-      const tbody = document.getElementById('missions-tbody');
-      tbody.innerHTML = '';
-
-      filteredMissions.forEach(m => {
-        const row = document.createElement('tr');
-        row.className = 'mission-row border-b border-white/10';
-        const outcomeClass = m.outcome === 'Success' ? 'bg-emerald-500/20 text-emerald-400' : 
-                           m.outcome === 'Partial success' ? 'bg-amber-500/20 text-amber-400' : 
-                           'bg-blue-500/20 text-blue-400';
-        row.innerHTML = `
-          <td class="px-6 py-3 font-mono text-xs text-white/70">${escapeHtml(m.date)}</td>
-          <td class="px-6 py-3 font-medium">${escapeHtml(m.flight)}</td>
-          <td class="px-6 py-3 text-xs text-white/70">${escapeHtml(m.type)}</td>
-          <td class="px-6 py-3 text-center">
-            <span class="inline-block text-[10px] px-2.5 py-px rounded-full ${outcomeClass}">${escapeHtml(m.outcome)}</span>
-          </td>
-          <td class="px-6 py-3 text-xs">${escapeHtml(m.notes)}</td>
-        `;
-        tbody.appendChild(row);
-      });
-
-      document.getElementById('visible-count').textContent = filteredMissions.length;
-    }
-
-    function filterAndRender() {
-      const searchVal = document.getElementById('search').value.toLowerCase().trim();
-      const yearVal = document.getElementById('year-filter').value;
-      const outcomeVal = document.getElementById('outcome-filter').value;
-
-      let filtered = missions;
-
-      if (searchVal) {
-        filtered = filtered.filter(m => 
-          m.flight.toLowerCase().includes(searchVal) || 
-          m.notes.toLowerCase().includes(searchVal)
-        );
-      }
-
-      if (yearVal) {
-        filtered = filtered.filter(m => m.date.startsWith(yearVal));
-      }
-
-      if (outcomeVal) {
-        filtered = filtered.filter(m => m.outcome === outcomeVal);
-      }
-
-      renderTable(filtered);
-    }
-
-    function resetFilters() {
-      document.getElementById('search').value = '';
-      document.getElementById('year-filter').value = '';
-      document.getElementById('outcome-filter').value = '';
-      renderTable(missions);
-    }
-
     function init() {
-      initTailwind();
-
-      const container = document.getElementById('stars');
-      for (let i = 0; i < 90; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 2 + 0.6;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        container.appendChild(star);
-      }
-
-      renderTable(missions);
-
-      document.getElementById('search').addEventListener('input', filterAndRender);
-      document.getElementById('year-filter').addEventListener('change', filterAndRender);
-      document.getElementById('outcome-filter').addEventListener('change', filterAndRender);
-
-      console.log('%c[Starship Program] All-years program page initialized.', 'color:#64748b');
+      if (window.tailwind) tailwind.config = { theme: { extend: {} } };
+      LaunchBoard.createStars(90);
+      LaunchBoard.load().then(LaunchBoard.renderStarship).catch(console.error);
     }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
   </script>
 </body>
 </html>

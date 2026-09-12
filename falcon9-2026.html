@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falcon 9 Launches 2026 • 103 Missions</title>
+  <title>Falcon 9 Launches 2026 • Live</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous">
   <style>
@@ -22,15 +22,11 @@
     .space-bg { background: radial-gradient(circle at 50% 20%, #0a1429 0%, #020617 50%, #000000 100%); }
     .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 1.5s infinite alternate; }
     @keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
-    .mission-table th { font-weight: 500; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .mission-row:hover { background-color: rgba(255,255,255,0.03); }
   </style>
 </head>
 <body class="bg-black text-white space-bg min-h-screen">
-  <!-- Stars -->
   <div id="stars" class="fixed inset-0 pointer-events-none z-0"></div>
-
-  <!-- Nav -->
   <nav class="relative z-50 border-b border-white/10 bg-black/60 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
@@ -50,43 +46,33 @@
       </div>
     </div>
   </nav>
-
   <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-6">
     <div class="flex items-end justify-between mb-8">
       <div>
         <div class="text-sm text-[#3b82f6] font-medium tracking-[2px]">FALCON 9 FAMILY</div>
         <h1 class="text-5xl font-semibold tracking-tighter font-display">2026 Launches</h1>
-        <p class="mt-1 text-xl text-white/70">104 missions • YTD as of September 10, 2026</p>
+        <p class="mt-1 text-xl text-white/70" id="f9-heading-count">Loading live Falcon 9 list…</p>
       </div>
       <div class="text-right hidden sm:block">
-        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]">103</div>
+        <div class="text-4xl font-semibold tabular-nums text-[#3b82f6]" id="f9-big-count">—</div>
         <div class="text-xs text-white/50">of ~140–145 Falcon goal</div>
       </div>
     </div>
-
-    <!-- Controls -->
     <div class="flex flex-col sm:flex-row gap-3 mb-4">
       <div class="flex-1 relative">
         <i class="fa-solid fa-search absolute left-4 top-3.5 text-white/40"></i>
-        <input id="search" type="text" placeholder="Search mission name or payload..." 
+        <input id="search" type="text" placeholder="Search mission name or payload..."
                class="w-full bg-white/5 border border-white/10 pl-10 pr-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-white/30 placeholder:text-white/40">
       </div>
       <select id="month-filter" class="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-white/30">
         <option value="">All months</option>
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
+        <option value="01">January</option><option value="02">February</option><option value="03">March</option>
+        <option value="04">April</option><option value="05">May</option><option value="06">June</option>
+        <option value="07">July</option><option value="08">August</option><option value="09">September</option>
+        <option value="10">October</option><option value="11">November</option><option value="12">December</option>
       </select>
       <button onclick="resetFilters()" class="px-4 py-3 text-sm border border-white/10 rounded-2xl hover:bg-white/5 transition">Reset</button>
     </div>
-
-    <!-- Table -->
     <div class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
@@ -104,160 +90,23 @@
         </table>
       </div>
     </div>
-
     <div class="mt-3 text-xs text-white/50 flex items-center justify-between px-1">
-      <div>Showing <span id="visible-count"></span> of 103 Falcon 9 launches (demo selection)</div>
+      <div>Showing <span id="visible-count"></span> Falcon 9 missions (live list, including upcoming)</div>
       <div>Full historical data: <a href="https://en.wikipedia.org/wiki/List_of_Falcon_9_and_Falcon_Heavy_launches" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">Wikipedia</a> • <a href="https://www.spacex.com/launches" target="_blank" class="underline hover:text-white" rel="noopener noreferrer">SpaceX</a></div>
     </div>
   </div>
-
   <footer class="border-t border-white/10 py-6 text-center text-xs text-white/50">
-    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> • Data approximate for illustration
+    Demo page for <a href="https://bennettwells.net/spacexdemo" class="underline">bennettwells.net/spacexdemo</a> • Live list from Launch Library 2
   </footer>
-
+  <script src="board.js"></script>
   <script>
-    function initTailwind() {
-      if (window.tailwind) tailwind.config = { theme: { extend: {} } };
-    }
-
-    function createStars() {
-      const container = document.getElementById('stars');
-      if (!container) return;
-      for (let i = 0; i < 90; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 2 + 0.6;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        container.appendChild(star);
-      }
-    }
-
-    // Curated 2026 Falcon 9 missions representing the 103 YTD (Next Spaceflight: 103rd Falcon 9 on Sep 6)
-    const missions = [
-      { date: "2026-01-03", mission: "Cosmo-SkyMed (Italy)", site: "Vandenberg SLC-4E", payload: "COSMO-SkyMed", booster: "B1081-21", outcome: "Success" },
-      { date: "2026-01-10", mission: "NROL-153", site: "Vandenberg SLC-4E", payload: "Starshield × 22", booster: "B1071-22", outcome: "Success" },
-      { date: "2026-02-25", mission: "Starlink Group 17-26", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1093-11", outcome: "Success" },
-      { date: "2026-04-26", mission: "50th Falcon 9 of 2026", site: "Vandenberg SLC-4E", payload: "Starlink batch", booster: "B1071-30", outcome: "Success" },
-      { date: "2026-05-24", mission: "Starlink Memorial Day", site: "Cape Canaveral SLC-40", payload: "Starlink batch", booster: "B1076-12", outcome: "Success" },
-      { date: "2026-06-12", mission: "BlueBird 8–10", site: "Cape Canaveral SLC-40", payload: "BlueBird × 3", booster: "B1063-26", outcome: "Success" },
-      { date: "2026-06-19", mission: "NROL-179", site: "Vandenberg SLC-4E", payload: "NROL-179 (NRO)", booster: "B1083-13", outcome: "Success" },
-      { date: "2026-07-11", mission: "Starlink Group 17-48", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1071-35", outcome: "Success" },
-      { date: "2026-07-14", mission: "Starlink Group 10-45", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1080-28", outcome: "Success" },
-      { date: "2026-07-16", mission: "SDA Tranche 1 Transport Layer E", site: "Vandenberg SLC-4E", payload: "SDA Tranche 1 × 21", booster: "B1082-22", outcome: "Success" },
-      { date: "2026-07-21", mission: "Starlink Group 17-39", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1082-23", outcome: "Success" },
-      { date: "2026-07-21", mission: "MRV-MEP Mission", site: "Cape Canaveral SLC-40", payload: "Mission Robotic Vehicle", booster: "Expended", outcome: "Success" },
-      { date: "2026-07-25", mission: "Starlink Group 17-51", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1082-24", outcome: "Success" },
-      { date: "2026-07-30", mission: "NROL-95", site: "Vandenberg SLC-4E", payload: "NROL-95", booster: "B108x", outcome: "Success" },
-      { date: "2026-08-01", mission: "Starlink Group 17-52", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B108x", outcome: "Success" },
-      { date: "2026-08-04", mission: "Starlink Group 17-53", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1063-34", outcome: "Success" },
-      { date: "2026-08-05", mission: "BlueBird 11–13", site: "Cape Canaveral SLC-40", payload: "BlueBird Block 2 × 3", booster: "B1077-30", outcome: "Success" },
-      { date: "2026-08-08", mission: "Starlink Group 17-38", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1093-16", outcome: "Success" },
-      { date: "2026-08-11", mission: "Starlink Group 10-19", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B108x", outcome: "Success" },
-      { date: "2026-08-15", mission: "Globalstar 2-R Launch 1", site: "Cape Canaveral SLC-40", payload: "Globalstar replenishment", booster: "B1090-14", outcome: "Success" },
-      { date: "2026-08-15", mission: "USSF-366", site: "Vandenberg SLC-4E", payload: "USSF-366 (classified)", booster: "18th flight", outcome: "Success" },
-      { date: "2026-08-19", mission: "100th SpaceX mission of 2026", site: "Vandenberg SLC-4E", payload: "Starlink × 24", booster: "B1097-12", outcome: "Success" },
-      { date: "2026-08-21", mission: "Starlink Group 10-39", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1078-30", outcome: "Success" },
-      { date: "2026-08-22", mission: "Starlink Group 15-20", site: "Vandenberg SLC-4E", payload: "Starlink × 27", booster: "B1100-9", outcome: "Success" },
-      { date: "2026-08-25", mission: "100th Falcon 9 of 2026", site: "Cape Canaveral SLC-40", payload: "Starlink × 29", booster: "B1067-37", outcome: "Success" },
-      { date: "2026-08-26", mission: "Starlink Group 15-22", site: "Vandenberg SLC-4E", payload: "Starlink × 27", booster: "B1082-24", outcome: "Success" },
-      { date: "2026-09-02", mission: "Starlink Group 15-23", site: "Vandenberg SLC-4E", payload: "Starlink × 27", booster: "B1063-35", outcome: "Success" },
-      { date: "2026-09-06", mission: "Starlink Group 15-24", site: "Vandenberg SLC-4E", payload: "Starlink × 27", booster: "B1088-19", outcome: "Success" },
-      { date: "2026-09-10", mission: "USSF-153", site: "Vandenberg SLC-4E", payload: "Classified (USSF)", booster: "B1081-27", outcome: "Success" }
-    ];
-
-    
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function renderTable(filteredMissions) {
-      const tbody = document.getElementById('missions-tbody');
-      tbody.innerHTML = '';
-
-      filteredMissions.forEach(m => {
-        const row = document.createElement('tr');
-        row.className = 'mission-row border-b border-white/10';
-        row.innerHTML = `
-          <td class="px-6 py-3 font-mono text-xs text-white/70">${escapeHtml(m.date)}</td>
-          <td class="px-6 py-3 font-medium">${escapeHtml(m.mission)}</td>
-          <td class="px-6 py-3 text-xs text-white/70">${escapeHtml(m.site)}</td>
-          <td class="px-6 py-3 text-xs">${escapeHtml(m.payload)}</td>
-          <td class="px-6 py-3 font-mono text-xs text-white/70">${escapeHtml(m.booster)}</td>
-          <td class="px-6 py-3 text-center">
-            <span class="inline-block text-[10px] px-2.5 py-px rounded-full ${m.outcome === 'Success' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}">${escapeHtml(m.outcome)}</span>
-          </td>
-        `;
-        tbody.appendChild(row);
-      });
-
-      document.getElementById('visible-count').textContent = filteredMissions.length;
-    }
-
-    function filterAndRender() {
-      const searchVal = document.getElementById('search').value.toLowerCase().trim();
-      const monthVal = document.getElementById('month-filter').value;
-
-      let filtered = missions;
-
-      if (searchVal) {
-        filtered = filtered.filter(m => 
-          m.mission.toLowerCase().includes(searchVal) || 
-          m.payload.toLowerCase().includes(searchVal)
-        );
-      }
-
-      if (monthVal) {
-        filtered = filtered.filter(m => m.date.startsWith('2026-' + monthVal));
-      }
-
-      renderTable(filtered);
-    }
-
-    function resetFilters() {
-      document.getElementById('search').value = '';
-      document.getElementById('month-filter').value = '';
-      renderTable(missions);
-    }
-
     function init() {
-      initTailwind();
-
-      // Stars
-      const container = document.getElementById('stars');
-      for (let i = 0; i < 90; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        const size = Math.random() * 2 + 0.6;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        container.appendChild(star);
-      }
-
-      // Initial render
-      renderTable(missions);
-
-      // Listeners
-      document.getElementById('search').addEventListener('input', filterAndRender);
-      document.getElementById('month-filter').addEventListener('change', filterAndRender);
-
-      console.log('%c[Falcon 9 2026] Missions page initialized. Data is a demo selection.', 'color:#64748b');
+      if (window.tailwind) tailwind.config = { theme: { extend: {} } };
+      LaunchBoard.createStars(90);
+      LaunchBoard.load().then(LaunchBoard.renderFalcon9).catch(console.error);
     }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
   </script>
 </body>
 </html>
