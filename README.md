@@ -1,42 +1,23 @@
-# testing
+# SpaceX 2026 live launch board
 
-> The official testing playground for bennettwellsnet.
+Live 2026 SpaceX launch counter for [bennettwells.net/spacexdemo](https://bennettwells.net/spacexdemo).
 
-This repository was initialized with a beautiful, fully interactive, self-contained demo webpage.
+Launch rows come from [Launch Library 2](https://thespacedevs.com). A GitHub Action refreshes `launches.json` every six hours. The pages are static HTML plus `board.js`.
 
-## 🚀 Demo
-
-Open [index.html](./index.html) in any browser, or enable GitHub Pages for a live hosted version.
-
-### Quick start (local)
+## Local
 
 ```bash
-git clone https://github.com/bennettwellsnet/testing.git
-cd testing
-open index.html
+python3 scripts/fetch_launches.py
+python3 -m http.server 8080
+# open http://127.0.0.1:8080/
 ```
 
-### Deploy on GitHub Pages
+## Data
 
-1. Go to **Settings → Pages**
-2. Set Source to **Deploy from a branch**
-3. Select branch: `main` and folder: `/ (root)`
-4. Save
+- `scripts/fetch_launches.py` — paginates LL2 for SpaceX 2026 (including suborbital Starship)
+- `launches.json` — fetched snapshot used by the site
+- Payload mass is a demo estimate (typical Starlink / Falcon Heavy class), not telemetry
 
-Your demo will be live at:
+## Deploy
 
-**https://bennettwellsnet.github.io/testing/**
-
-## What's inside
-
-- `index.html` — A polished, zero-dependency (except Tailwind CDN) interactive demo featuring:
-  - Stateful counter (persisted in localStorage)
-  - Color lab with live preview and Tailwind class output
-  - Test data generator with filtering
-  - Simulated CI test runner with progress + log
-
-Everything is client-side. Open the raw file or enable Pages for the full experience.
-
----
-
-*Initial content added automatically on 2026-06-13.*
+Pushes to `main` copy `*.html`, `board.js`, and `launches.json` into `bennettwellsnet/bennettwells-website` via `.github/workflows/sync-to-website.yml`.

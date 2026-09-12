@@ -1,0 +1,36 @@
+name: Refresh launches
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/fetch_launches.py"
+      - ".github/workflows/refresh-launches.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch Launch Library 2
+        run: python3 scripts/fetch_launches.py
+
+      - name: Commit launches.json if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add launches.json
+          if git diff --staged --quiet; then
+            echo "No launch data changes."
+          else
+            git commit -m "data: refresh SpaceX 2026 launches from Launch Library 2"
+            git push
+          fi

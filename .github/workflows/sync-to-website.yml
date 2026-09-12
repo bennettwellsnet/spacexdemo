@@ -25,6 +25,8 @@ jobs:
         run: |
           mkdir -p bennettwells-website/spacexdemo
           cp spacexdemo/*.html bennettwells-website/spacexdemo/
+          cp spacexdemo/*.js bennettwells-website/spacexdemo/
+          cp spacexdemo/*.json bennettwells-website/spacexdemo/
 
       - name: Commit and push
         run: |

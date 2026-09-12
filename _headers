@@ -1,3 +1,6 @@
+/launches.json
+  Cache-Control: public, max-age=300
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
