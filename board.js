@@ -4,12 +4,10 @@
   const AMBITIOUS_TARGET = 160;
 
   function escapeHtml(str) {
-    return String(str)
-      .replace(/&/g, "&")
-      .replace(/</g, "<")
-      .replace(/>/g, ">")
-      .replace(/"/g, """)
-      .replace(/'/g, "&#39;");
+    // DOM path avoids HTML-entity literals that GitHub MCP XML-decodes on upload.
+    const el = document.createElement("span");
+    el.textContent = String(str);
+    return el.innerHTML;
   }
 
   function parseNet(net) {
@@ -305,7 +303,7 @@
     }));
     const missions = STARSHIP_HISTORY.concat(live);
     const ytd = live.filter((l) => l.status === "success" || l.status === "partial" || l.status === "failure").length;
-    setText("ss-ytd", String(ytd));
+    setText("ss-ytd", String(ytd || live.filter((l) => l.outcome === "Success" || l.outcome === "Partial success").length));
     setText("ss-as-of", "Current as of live Launch Library 2 feed");
 
     const tbody = document.getElementById("missions-tbody");
