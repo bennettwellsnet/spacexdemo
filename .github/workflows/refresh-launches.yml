@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Fetch Launch Library 2
         run: python3 scripts/fetch_launches.py
@@ -32,5 +33,6 @@ jobs:
             echo "No launch data changes."
           else
             git commit -m "data: refresh SpaceX 2026 launches from Launch Library 2"
+            git pull --rebase origin main
             git push
           fi
