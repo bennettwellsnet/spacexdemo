@@ -16,7 +16,7 @@ python3 -m http.server 8080
 
 - `scripts/fetch_launches.py` — paginates LL2 for SpaceX 2026 (including suborbital Starship)
 - `launches.json` — fetched snapshot used by the site
-- Payload mass is a demo estimate (typical Starlink / Falcon Heavy class), not telemetry
+- Payload mass uses Launch Library 2 `payload_flights` when a mass is published; Starlink and other gaps still use class estimates (not telemetry)
 
 ## Deploy
 
