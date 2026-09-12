@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -15,6 +16,8 @@ from pathlib import Path
 YEAR = 2026
 API = "https://ll.thespacedevs.com/2.2.0/launch/"
 PAYLOAD_FLIGHTS = "https://ll.thespacedevs.com/2.3.0/payload_flights/"
+XAI_RESPONSES = "https://api.x.ai/v1/responses"
+BRIEF_MODEL = "grok-4.6"
 UA = "bennettwells-spacexdemo/1.0 (+https://bennettwells.net/spacexdemo)"
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "launches.json"
@@ -237,6 +240,114 @@ def normalize(row: dict, mass_by_id: dict[str, dict]) -> dict:
     }
 
 
+def line_for(launch: dict) -> str:
+    bits = [
+        launch.get("name") or "Unknown",
+        launch.get("net") or "NET TBA",
+        launch.get("vehicle_label") or "",
+        launch.get("pad") or "",
+        launch.get("status_label") or launch.get("status") or "",
+    ]
+    return " · ".join(b for b in bits if b)
+
+
+def previous_brief() -> dict | None:
+    if not OUT.exists():
+        return None
+    try:
+        old = json.loads(OUT.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+    brief = old.get("brief")
+    if isinstance(brief, dict) and (brief.get("text") or "").strip():
+        return brief
+    return None
+
+
+def response_text(data: dict) -> str:
+    chunks: list[str] = []
+    for item in data.get("output") or []:
+        if not isinstance(item, dict) or item.get("type") != "message":
+            continue
+        for part in item.get("content") or []:
+            if isinstance(part, dict) and part.get("type") == "output_text":
+                text = (part.get("text") or "").strip()
+                if text:
+                    chunks.append(text)
+    return "\n".join(chunks).strip()
+
+
+def generate_brief(flown: list[dict], upcoming: list[dict], counts: dict, now: datetime) -> dict | None:
+    key = (os.environ.get("XAI_API_KEY") or "").strip()
+    if not key:
+        print("XAI_API_KEY not set — skipping SpaceXAI brief", file=sys.stderr)
+        return None
+    last = flown[-1] if flown else None
+    nxt = []
+    for launch in upcoming:
+        net = parse_net(launch.get("net"))
+        if not net or net >= now:
+            nxt.append(launch)
+        if len(nxt) >= 3:
+            break
+    facts = [
+        f"As of {now.strftime('%Y-%m-%dT%H:%MZ')} UTC.",
+        (
+            f"SpaceX 2026 YTD: {counts.get('flown', 0)} flown "
+            f"({counts.get('falcon9', 0)} Falcon 9, {counts.get('starship', 0)} Starship, "
+            f"{counts.get('falcon_heavy', 0)} Falcon Heavy); "
+            f"{counts.get('upcoming', 0)} still listed as upcoming."
+        ),
+    ]
+    if last:
+        facts.append("Last flown: " + line_for(last))
+    if nxt:
+        facts.append("Next: " + line_for(nxt[0]))
+        if len(nxt) > 1:
+            facts.append("Then: " + "; ".join(line_for(l) for l in nxt[1:]))
+    prompt = (
+        "Write a 2–3 sentence launch-board brief for a public demo page. "
+        "Use ONLY the facts below. Do not add missions, dates, pads, or outcomes "
+        "that are not listed. Neutral tone. No hype. Not an official SpaceX statement.\n\n"
+        + "\n".join(facts)
+    )
+    body = {
+        "model": BRIEF_MODEL,
+        "input": prompt,
+        "store": False,
+        "max_output_tokens": 400,
+        "temperature": 0.3,
+        "search_parameters": {"mode": "off"},
+    }
+    req = urllib.request.Request(
+        XAI_RESPONSES,
+        data=json.dumps(body).encode("utf-8"),
+        headers={
+            "User-Agent": UA,
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + key,
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            data = json.load(resp)
+    except Exception as e:
+        print(f"SpaceXAI brief failed: {e}", file=sys.stderr)
+        return None
+    text = response_text(data)
+    if not text:
+        print("SpaceXAI brief empty", file=sys.stderr)
+        return None
+    return {
+        "text": text,
+        "model": data.get("model") or BRIEF_MODEL,
+        "provider": "SpaceXAI",
+        "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+
+
 def world_success_count(now: datetime) -> int | None:
     end = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     url = (
@@ -322,6 +433,9 @@ def main() -> int:
         },
         "launches": launches,
     }
+    brief = generate_brief(flown, upcoming, payload["counts"], now) or previous_brief()
+    if brief:
+        payload["brief"] = brief
 
     text = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
     OUT.write_text(text)
