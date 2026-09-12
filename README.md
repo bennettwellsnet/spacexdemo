@@ -2,7 +2,7 @@
 
 Live 2026 SpaceX launch counter for [bennettwells.net/spacexdemo](https://bennettwells.net/spacexdemo).
 
-Launch rows come from [Launch Library 2](https://thespacedevs.com). A GitHub Action refreshes `launches.json` every six hours. The pages are static HTML plus `board.js`.
+Launch rows come from [Launch Library 2](https://thespacedevs.com). A GitHub Action refreshes `launches.json` once a day. The pages are static HTML plus `board.js`.
 
 ## Local
 
