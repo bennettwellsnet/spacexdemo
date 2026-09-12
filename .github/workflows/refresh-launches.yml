@@ -22,6 +22,8 @@ jobs:
           fetch-depth: 0
 
       - name: Fetch Launch Library 2
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
         run: python3 scripts/fetch_launches.py
 
       - name: Commit launches.json if it changed
