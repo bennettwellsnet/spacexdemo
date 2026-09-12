@@ -175,6 +175,7 @@
       setText("mass-row-ye", "~" + formatTons(rowYe));
       setText("mass-world-ye", "~" + formatTons(worldYe));
       setText("mass-share-ye", shareYe.toFixed(0) + "%");
+      if (data.mass && data.mass.note) setText("mass-footnote", data.mass.note);
     }
 
     const next = up[0];
@@ -377,7 +378,8 @@
       "</div></div><div><h2 class=\"font-semibold text-lg mb-2\">Key Details</h2>" +
       '<ul class="text-sm space-y-1 text-white/80">' +
       "<li>• " + escapeHtml(l.vehicle_label) + "</li>" +
-      "<li>• Estimated payload ~" + escapeHtml(String(l.payload_t)) + " t (demo)</li>" +
+      "<li>• Payload ~" + escapeHtml(String(l.payload_t)) + " t (" +
+      escapeHtml(l.payload_source === "api" ? "Launch Library 2" : "class estimate") + ")</li>" +
       "</ul></div></div></div>"
     ).join("");
   }
