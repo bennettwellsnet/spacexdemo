@@ -1,8 +1,8 @@
 {
   "source": "Launch Library 2 (thespacedevs.com)",
-  "source_url": "https://ll.thespacedevs.com/2.2.0/swagger/",
+  "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-09-12T16:48:10Z",
+  "fetched_at": "2026-09-12T17:16:13Z",
   "counts": {
     "flown": 108,
     "success": 108,
@@ -14,11 +14,17 @@
     "upcoming": 49
   },
   "mass": {
-    "spacex_t": 1497.2,
-    "row_t": 297.0,
+    "spacex_t": 1492.2,
+    "row_t": 294.0,
     "world_success_launches": 214,
     "row_launches": 106,
-    "note": "SpaceX tons are demo estimates from typical Starlink/FH payloads, not telemetry."
+    "spacex_api_t": 10.6,
+    "spacex_estimate_t": 1481.6,
+    "spacex_api_launches": 2,
+    "spacex_estimate_launches": 106,
+    "row_api_t": 2.6,
+    "row_api_launches": 2,
+    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 106 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
   },
   "launches": [
     {
@@ -34,6 +40,7 @@
       "orbit": null,
       "mission_type": "Earth Science",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20251231191350.jpg"
     },
     {
@@ -49,6 +56,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -64,6 +72,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -79,6 +88,7 @@
       "orbit": null,
       "mission_type": "Astrophysics",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260111193014.jpg"
     },
     {
@@ -94,6 +104,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -109,6 +120,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -124,6 +136,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
     },
     {
@@ -139,6 +152,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -154,6 +168,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -169,6 +184,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -184,6 +200,7 @@
       "orbit": null,
       "mission_type": "Navigation",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20260128051232.jpg"
     },
     {
@@ -199,6 +216,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -214,6 +232,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -229,6 +248,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -244,6 +264,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -259,6 +280,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -274,6 +296,7 @@
       "orbit": null,
       "mission_type": "Human Exploration",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_at_slc_image_20260208171226.jpg"
     },
     {
@@ -289,6 +312,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -304,6 +328,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -319,6 +344,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -334,6 +360,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -349,6 +376,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -364,6 +392,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -379,6 +408,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -394,6 +424,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -409,6 +440,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -424,6 +456,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -439,6 +472,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -454,6 +488,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -469,6 +504,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260310063823.jpg"
     },
     {
@@ -484,6 +520,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -499,6 +536,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -514,6 +552,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -529,6 +568,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -544,6 +584,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -559,6 +600,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -574,6 +616,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -589,6 +632,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -604,6 +648,7 @@
       "orbit": null,
       "mission_type": "Dedicated Rideshare",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -619,6 +664,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -634,6 +680,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -649,6 +696,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -664,6 +712,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -679,6 +728,7 @@
       "orbit": null,
       "mission_type": "Resupply",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -694,6 +744,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -709,6 +760,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -724,6 +776,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -739,6 +792,7 @@
       "orbit": null,
       "mission_type": "Navigation",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -754,6 +808,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -769,6 +824,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -784,6 +840,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.4,
+      "payload_source": "api",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_on_image_20260427051334.jpg"
     },
     {
@@ -799,6 +856,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -814,6 +872,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -829,6 +888,7 @@
       "orbit": null,
       "mission_type": "Earth Science",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20260503063348.jpeg"
     },
     {
@@ -844,6 +904,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -859,6 +920,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
     },
     {
@@ -874,6 +936,7 @@
       "orbit": null,
       "mission_type": "Resupply",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20210520085648.jpeg"
     },
     {
@@ -889,6 +952,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -904,6 +968,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -919,6 +984,7 @@
       "orbit": null,
       "mission_type": "Test Flight",
       "payload_t": 0.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_liftof_image_20260523085855.jpg"
     },
     {
@@ -934,6 +1000,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -949,6 +1016,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -964,6 +1032,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -979,6 +1048,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -994,6 +1064,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1009,6 +1080,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1024,6 +1096,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1039,6 +1112,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1054,6 +1128,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1069,6 +1144,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1084,6 +1160,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1099,6 +1176,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_on_slc-40_2_image_20240919072420.jpg"
     },
     {
@@ -1114,6 +1192,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
     },
     {
@@ -1129,6 +1208,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1144,6 +1224,7 @@
       "orbit": null,
       "mission_type": "Technology",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20241206131356.jpg"
     },
     {
@@ -1159,6 +1240,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1174,6 +1256,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1189,6 +1272,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20241206131356.jpg"
     },
     {
@@ -1204,6 +1288,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1219,6 +1304,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1234,6 +1320,7 @@
       "orbit": null,
       "mission_type": "Dedicated Rideshare",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1249,6 +1336,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1264,6 +1352,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1279,6 +1368,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1294,6 +1384,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1309,6 +1400,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1324,6 +1416,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1339,6 +1432,7 @@
       "orbit": null,
       "mission_type": "Mission Extension",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_at_slc_image_20260721192735.jpg"
     },
     {
@@ -1354,6 +1448,7 @@
       "orbit": null,
       "mission_type": "Test Flight",
       "payload_t": 25.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
@@ -1369,6 +1464,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1384,6 +1480,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_at_slc_image_20260729112529.jpeg"
     },
     {
@@ -1399,6 +1496,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1414,6 +1512,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1429,6 +1528,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_on_slc-40_2_image_20240919072420.jpg"
     },
     {
@@ -1444,6 +1544,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1459,6 +1560,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1474,6 +1576,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1489,6 +1592,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1504,6 +1608,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
     },
     {
@@ -1519,6 +1624,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1534,6 +1640,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1549,6 +1656,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1564,6 +1672,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 16.7,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1579,6 +1688,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1593,7 +1703,8 @@
       "status_label": "Launch Successful",
       "orbit": null,
       "mission_type": "Astrophysics",
-      "payload_t": 9.2,
+      "payload_t": 4.17,
+      "payload_source": "api",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_on_image_20260830111425.jpeg"
     },
     {
@@ -1609,6 +1720,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1624,6 +1736,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1639,6 +1752,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
     },
     {
@@ -1654,6 +1768,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1669,6 +1784,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
     },
     {
@@ -1684,6 +1800,7 @@
       "orbit": null,
       "mission_type": "Test Flight",
       "payload_t": 0.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
@@ -1699,6 +1816,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 15.5,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
@@ -1714,6 +1832,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1729,6 +1848,7 @@
       "orbit": null,
       "mission_type": "Human Exploration",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20220301072106.jpeg"
     },
     {
@@ -1744,6 +1864,7 @@
       "orbit": null,
       "mission_type": "Dedicated Rideshare",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20251102082912.jpg"
     },
     {
@@ -1759,6 +1880,7 @@
       "orbit": null,
       "mission_type": "Dedicated Rideshare",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1774,6 +1896,7 @@
       "orbit": null,
       "mission_type": "Resupply",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20210520085648.jpeg"
     },
     {
@@ -1789,6 +1912,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
     },
     {
@@ -1804,6 +1928,7 @@
       "orbit": null,
       "mission_type": "Lunar Exploration",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
     },
     {
@@ -1819,6 +1944,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1834,6 +1960,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1849,6 +1976,7 @@
       "orbit": null,
       "mission_type": "Earth Science",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1864,6 +1992,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1879,6 +2008,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1894,6 +2024,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1909,6 +2040,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
     },
     {
@@ -1924,6 +2056,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1939,6 +2072,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1954,6 +2088,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1969,6 +2104,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1984,6 +2120,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -1999,6 +2136,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2014,6 +2152,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2029,6 +2168,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2044,6 +2184,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2059,6 +2200,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2074,6 +2216,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2089,6 +2232,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2104,6 +2248,7 @@
       "orbit": null,
       "mission_type": "Resupply",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2119,6 +2264,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2134,6 +2280,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2149,6 +2296,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2164,6 +2312,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2179,6 +2328,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2194,6 +2344,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2209,6 +2360,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2224,6 +2376,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2239,6 +2392,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2254,6 +2408,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2269,6 +2424,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2284,6 +2440,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2299,6 +2456,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2314,6 +2472,7 @@
       "orbit": null,
       "mission_type": "Resupply",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2329,6 +2488,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241221043403.jpg"
     },
     {
@@ -2344,6 +2504,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2359,6 +2520,7 @@
       "orbit": null,
       "mission_type": "Communications",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
@@ -2374,6 +2536,7 @@
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
+      "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     }
   ]
