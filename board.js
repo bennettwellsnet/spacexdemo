@@ -192,6 +192,26 @@
         '<div class="text-[11px] text-white/45 mt-2">' + escapeHtml(next.vehicle_label) + "</div></div></div>";
     }
 
+    const briefEl = document.getElementById("launch-brief");
+    const brief = data.brief && data.brief.text;
+    if (briefEl) {
+      if (brief) {
+        briefEl.classList.remove("hidden");
+        const when = data.brief.generated_at
+          ? escapeHtml(formatWhen(data.brief.generated_at))
+          : "";
+        const model = escapeHtml(data.brief.model || "grok");
+        briefEl.innerHTML =
+          '<div class="text-[10px] uppercase tracking-wider text-[#f97316]/80 mb-2">SpaceXAI brief</div>' +
+          '<p class="text-sm text-white/80 leading-relaxed">' + escapeHtml(data.brief.text) + "</p>" +
+          '<div class="text-[11px] text-white/40 mt-3">Generated ' + when +
+          " · " + model + " · not an official SpaceX statement</div>";
+      } else {
+        briefEl.classList.add("hidden");
+        briefEl.innerHTML = "";
+      }
+    }
+
     const notable = document.getElementById("notable-missions");
     if (notable) {
       const picks = [];
