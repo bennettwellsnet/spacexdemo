@@ -2,29 +2,29 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-09-16T15:25:31Z",
+  "fetched_at": "2026-09-17T12:23:17Z",
   "counts": {
-    "flown": 109,
-    "success": 109,
+    "flown": 110,
+    "success": 110,
     "failure": 0,
     "partial": 0,
-    "falcon9": 105,
+    "falcon9": 106,
     "starship": 2,
     "falcon_heavy": 2,
-    "upcoming": 50
+    "upcoming": 49
   },
   "mass": {
-    "spacex_t": 1498.2,
+    "spacex_t": 1506.2,
     "row_t": 305.0,
-    "world_success_launches": 219,
+    "world_success_launches": 220,
     "row_launches": 110,
     "spacex_api_t": 10.6,
-    "spacex_estimate_t": 1487.6,
+    "spacex_estimate_t": 1495.6,
     "spacex_api_launches": 2,
-    "spacex_estimate_launches": 107,
+    "spacex_estimate_launches": 108,
     "row_api_t": 2.6,
     "row_api_launches": 2,
-    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 107 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
+    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 108 use class estimates (Starlink ~15.5\u201316.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
   },
   "launches": [
     {
@@ -1773,14 +1773,14 @@
     },
     {
       "id": "17c71937-dd80-406f-bb47-0c9ee9a24276",
-      "net": "2026-09-17T01:00:00Z",
+      "net": "2026-09-17T01:07:56Z",
       "name": "USSF-259",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
       "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "Go for Launch",
+      "status": "success",
+      "status_label": "Launch Successful",
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
