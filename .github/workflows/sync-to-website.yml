@@ -20,7 +20,6 @@ jobs:
           repository: bennettwellsnet/bennettwells-website
           token: ${{ secrets.WEBSITE_PAT }}
           path: bennettwells-website
-          ref: site/2026-10-13-starlink-15-25
 
       - name: Copy files into spacexdemo subfolder
         run: |
@@ -36,4 +35,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add spacexdemo/
           git diff --staged --quiet && echo "No changes to sync." || \
-            (git commit -m "sync: update spacexdemo from source repo (119/F9 113/FH 3/Starship 3)" && git push)
+            (git commit -m "sync: update spacexdemo from source repo" && git push)
