@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-10-14T15:49:26Z",
+  "fetched_at": "2026-10-15T15:35:38Z",
   "counts": {
     "flown": 119,
     "success": 119,
@@ -11,7 +11,7 @@
     "falcon9": 113,
     "starship": 3,
     "falcon_heavy": 3,
-    "upcoming": 43
+    "upcoming": 44
   },
   "mass": {
     "spacex_t": 1577.2,
@@ -1933,7 +1933,7 @@
     },
     {
       "id": "df88cfbf-f504-4e11-8370-e33dd6280b5b",
-      "net": "2026-10-15T23:44:00Z",
+      "net": "2026-10-15T23:57:05Z",
       "name": "USSF-481",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
@@ -2010,6 +2010,22 @@
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "11b218b1-5e40-4b9d-854e-50320299239d",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "BlueBird 14-16 (Block 2 #9-11)",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-40",
+      "site": "Cape Canaveral SFS, FL, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/f9_on_slc-40_2_image_20240919072420.jpg"
     },
     {
       "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
@@ -2140,22 +2156,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 8",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "d6615c37-dcef-45d1-96c1-3d1a5250bf13",
       "net": "2026-12-31T00:00:00Z",
       "name": "Telesat Lightspeed 3",
@@ -2183,6 +2183,22 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 8",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
