@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-10-24T14:33:08Z",
+  "fetched_at": "2026-10-25T14:56:50Z",
   "counts": {
     "flown": 122,
     "success": 122,
@@ -15,9 +15,9 @@
   },
   "mass": {
     "spacex_t": 1606.7,
-    "row_t": 353.0,
-    "world_success_launches": 249,
-    "row_launches": 127,
+    "row_t": 355.0,
+    "world_success_launches": 250,
+    "row_launches": 128,
     "spacex_api_t": 10.6,
     "spacex_estimate_t": 1596.1,
     "spacex_api_launches": 2,
@@ -2092,6 +2092,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "a9ee8337-127d-4f17-9e3a-a07999f80099",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "SDA Tranche 1 Tracking Layer D",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 12",
@@ -2108,20 +2124,20 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "fcbc4550-e69e-4458-a9e6-4a5b6b6b15a5",
+      "id": "0f867f0c-5422-4d44-93b8-d7faaae7019b",
       "net": "2026-12-31T00:00:00Z",
-      "name": "SDA Tranche 1 Tracking Layer E",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
+      "name": "Flight 15",
+      "vehicle": "starship",
+      "vehicle_label": "Starship",
+      "pad": "Pad 2",
+      "site": "SpaceX Starbase, TX, USA",
       "status": "upcoming",
       "status_label": "To Be Determined",
       "orbit": null,
-      "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
+      "mission_type": "Test Flight",
+      "payload_t": 0.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
       "id": "ce1317de-ec94-4479-9b28-38ebf11f13ae",
@@ -2156,20 +2172,36 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "0f867f0c-5422-4d44-93b8-d7faaae7019b",
+      "id": "5ce7e9b6-b471-4a88-891f-2a6f21cb369f",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Flight 15",
-      "vehicle": "starship",
-      "vehicle_label": "Starship",
-      "pad": "Pad 2",
-      "site": "SpaceX Starbase, TX, USA",
+      "name": "Rivada 9",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
       "status": "upcoming",
       "status_label": "To Be Determined",
       "orbit": null,
-      "mission_type": "Test Flight",
-      "payload_t": 0.0,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 8",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "fa895702-687b-4ba3-95fb-9462a2c9844b",
@@ -2252,22 +2284,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "5ce7e9b6-b471-4a88-891f-2a6f21cb369f",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 9",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "c1bd775a-2fff-45bb-9726-765b69817c19",
       "net": "2026-12-31T00:00:00Z",
       "name": "USSF-75",
@@ -2282,22 +2298,6 @@
       "payload_t": 8.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
-    },
-    {
-      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 8",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "cb1762f0-90f4-4902-a5f6-655a7ade25bf",
