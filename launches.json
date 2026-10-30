@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-10-29T17:26:01Z",
+  "fetched_at": "2026-10-30T17:01:13Z",
   "counts": {
     "flown": 123,
     "success": 123,
@@ -11,7 +11,7 @@
     "falcon9": 117,
     "starship": 3,
     "falcon_heavy": 3,
-    "upcoming": 39
+    "upcoming": 38
   },
   "mass": {
     "spacex_t": 1622.2,
@@ -1997,7 +1997,7 @@
     },
     {
       "id": "57ce0a39-d035-4f16-a418-bd6108f78199",
-      "net": "2026-10-31T03:48:00Z",
+      "net": "2026-10-31T04:02:22Z",
       "name": "Starlink Group 15-18",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
@@ -2060,6 +2060,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
     },
     {
+      "id": "d74afbc7-0de5-491c-be05-4e9c31f736ac",
+      "net": "2026-11-29T16:00:00Z",
+      "name": "Cygnus CRS-2 NG-25",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-40",
+      "site": "Cape Canaveral SFS, FL, USA",
+      "status": "upcoming",
+      "status_label": "To Be Confirmed",
+      "orbit": null,
+      "mission_type": "Resupply",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "56ca6058-7ccc-4ec0-b1b0-fb49f3bfee49",
       "net": "2026-11-30T00:00:00Z",
       "name": "NROL-195",
@@ -2106,22 +2122,6 @@
       "payload_t": 0.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
-    },
-    {
-      "id": "d74afbc7-0de5-491c-be05-4e9c31f736ac",
-      "net": "2026-11-30T00:00:00Z",
-      "name": "Cygnus CRS-2 NG-25",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-40",
-      "site": "Cape Canaveral SFS, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Resupply",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "d08d8b46-353b-4eee-ab5e-e1385b329008",
@@ -2220,20 +2220,20 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "ce1317de-ec94-4479-9b28-38ebf11f13ae",
+      "id": "d3bd7fb2-fac6-49fc-ae52-cee07d2fde67",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Telesat Lightspeed 1",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "Unknown Pad",
-      "site": "Cape Canaveral SFS, FL, USA",
+      "name": "Griffin Mission One",
+      "vehicle": "falcon-heavy",
+      "vehicle_label": "Falcon Heavy",
+      "pad": "LC-39A",
+      "site": "Kennedy Space Center, FL, USA",
       "status": "upcoming",
       "status_label": "To Be Determined",
       "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
+      "mission_type": "Lunar Exploration",
+      "payload_t": 8.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
     },
     {
       "id": "c703fab3-2ce4-4cf1-861d-754da3f3ad42",
@@ -2284,20 +2284,20 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "d3bd7fb2-fac6-49fc-ae52-cee07d2fde67",
+      "id": "fc1bd321-e502-4d0f-81f4-1926dece81c6",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Griffin Mission One",
-      "vehicle": "falcon-heavy",
-      "vehicle_label": "Falcon Heavy",
-      "pad": "LC-39A",
-      "site": "Kennedy Space Center, FL, USA",
+      "name": "VICTUS SURGO",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "Unknown Pad",
+      "site": "Cape Canaveral SFS, FL, USA",
       "status": "upcoming",
       "status_label": "To Be Determined",
       "orbit": null,
-      "mission_type": "Lunar Exploration",
-      "payload_t": 8.0,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "c1bd775a-2fff-45bb-9726-765b69817c19",
@@ -2316,38 +2316,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
     },
     {
-      "id": "ab932c60-d808-4825-ab71-b6fe0a745f15",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 3",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "fc1bd321-e502-4d0f-81f4-1926dece81c6",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "VICTUS SURGO",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "Unknown Pad",
-      "site": "Cape Canaveral SFS, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "5ce7e9b6-b471-4a88-891f-2a6f21cb369f",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 9",
@@ -2364,9 +2332,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
+      "id": "ab932c60-d808-4825-ab71-b6fe0a745f15",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 8",
+      "name": "Rivada 3",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2412,6 +2380,38 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "dca8749f-1552-485a-8061-f1ad79055b8d",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "SDA Tranche 1 Tracking Layer C",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 8",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "71df1dd0-d658-4762-b0bc-0fca6886aea7",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 2 Transport Layer D",
@@ -2439,22 +2439,6 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "dca8749f-1552-485a-8061-f1ad79055b8d",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "SDA Tranche 1 Tracking Layer C",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Government/Top Secret",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
