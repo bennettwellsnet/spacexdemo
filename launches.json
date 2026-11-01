@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-10-31T16:06:01Z",
+  "fetched_at": "2026-11-01T17:07:28Z",
   "counts": {
     "flown": 124,
     "success": 124,
@@ -11,7 +11,7 @@
     "falcon9": 118,
     "starship": 3,
     "falcon_heavy": 3,
-    "upcoming": 37
+    "upcoming": 36
   },
   "mass": {
     "spacex_t": 1637.7,
@@ -2236,22 +2236,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "d3bd7fb2-fac6-49fc-ae52-cee07d2fde67",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Griffin Mission One",
-      "vehicle": "falcon-heavy",
-      "vehicle_label": "Falcon Heavy",
-      "pad": "LC-39A",
-      "site": "Kennedy Space Center, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Lunar Exploration",
-      "payload_t": 8.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
-    },
-    {
       "id": "dfd444f9-ddda-4b35-8f51-cda7cd801809",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 1",
@@ -2508,6 +2492,38 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "4541ce85-0e38-42ac-a9a0-20474bb5f2cd",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "SDA Tranche 1 Transport Layer D",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "511a3ef8-799e-4723-9293-b954d9d2eb83",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 10",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "71ed4649-8d71-42e8-8548-d42ffa2c5a6e",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 2 Transport Layer E",
@@ -2543,38 +2559,6 @@
       "id": "46d6822b-82aa-452c-aa34-80b6f052de84",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 6",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "4541ce85-0e38-42ac-a9a0-20474bb5f2cd",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "SDA Tranche 1 Transport Layer D",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "511a3ef8-799e-4723-9293-b954d9d2eb83",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 10",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
