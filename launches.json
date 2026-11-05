@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-04T18:38:45Z",
+  "fetched_at": "2026-11-05T18:44:58Z",
   "counts": {
     "flown": 124,
     "success": 124,
@@ -15,9 +15,9 @@
   },
   "mass": {
     "spacex_t": 1637.7,
-    "row_t": 364.0,
-    "world_success_launches": 255,
-    "row_launches": 131,
+    "row_t": 367.0,
+    "world_success_launches": 256,
+    "row_launches": 132,
     "spacex_api_t": 10.6,
     "spacex_estimate_t": 1627.1,
     "spacex_api_launches": 2,
@@ -2140,22 +2140,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
-      "id": "d08d8b46-353b-4eee-ab5e-e1385b329008",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 11",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 7",
@@ -2175,6 +2159,22 @@
       "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 2",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "d08d8b46-353b-4eee-ab5e-e1385b329008",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 11",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2332,9 +2332,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "fa895702-687b-4ba3-95fb-9462a2c9844b",
+      "id": "ab932c60-d808-4825-ab71-b6fe0a745f15",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 5",
+      "name": "Rivada 3",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2348,9 +2348,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "ab932c60-d808-4825-ab71-b6fe0a745f15",
+      "id": "fa895702-687b-4ba3-95fb-9462a2c9844b",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 3",
+      "name": "Rivada 5",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2428,22 +2428,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "8bf5f61e-a7e1-41e6-aede-7b87e4beebab",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "CHORUS",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "Unknown Pad",
-      "site": "Cape Canaveral SFS, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Earth Science",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "7d77bd89-af23-4a5a-b632-de0034003a64",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 8",
@@ -2455,6 +2439,22 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "8bf5f61e-a7e1-41e6-aede-7b87e4beebab",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "CHORUS",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "Unknown Pad",
+      "site": "Cape Canaveral SFS, FL, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Earth Science",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
