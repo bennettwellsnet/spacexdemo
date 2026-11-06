@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-05T18:44:58Z",
+  "fetched_at": "2026-11-06T17:57:19Z",
   "counts": {
     "flown": 124,
     "success": 124,
@@ -11,7 +11,7 @@
     "falcon9": 118,
     "starship": 3,
     "falcon_heavy": 3,
-    "upcoming": 37
+    "upcoming": 36
   },
   "mass": {
     "spacex_t": 1637.7,
@@ -2013,7 +2013,7 @@
     },
     {
       "id": "54d471e8-695c-4fa7-a3cf-dbd8b389e8ae",
-      "net": "2026-11-07T00:46:00Z",
+      "net": "2026-11-07T00:48:42Z",
       "name": "USSF-432",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
@@ -2042,6 +2042,22 @@
       "payload_t": 8.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
+    },
+    {
+      "id": "0f867f0c-5422-4d44-93b8-d7faaae7019b",
+      "net": "2026-11-13T00:00:00Z",
+      "name": "Flight 15",
+      "vehicle": "starship",
+      "vehicle_label": "Starship",
+      "pad": "Pad 2",
+      "site": "SpaceX Starbase, TX, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Test Flight",
+      "payload_t": 0.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
       "id": "76617033-4dc0-4448-b50c-e5b0d5a18539",
@@ -2122,22 +2138,6 @@
       "payload_t": 15.5,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
-    },
-    {
-      "id": "0f867f0c-5422-4d44-93b8-d7faaae7019b",
-      "net": "2026-11-30T00:00:00Z",
-      "name": "Flight 15",
-      "vehicle": "starship",
-      "vehicle_label": "Starship",
-      "pad": "Pad 2",
-      "site": "SpaceX Starbase, TX, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Test Flight",
-      "payload_t": 0.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
     },
     {
       "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
@@ -2583,22 +2583,6 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "01ca3653-126a-4c01-94fb-a9467b39cdac",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Inmarsat-7 F1 (GX-7)",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "Unknown Pad",
-      "site": "Cape Canaveral SFS, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
