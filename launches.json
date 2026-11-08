@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-07T16:50:20Z",
+  "fetched_at": "2026-11-08T17:03:50Z",
   "counts": {
     "flown": 125,
     "success": 125,
@@ -15,9 +15,9 @@
   },
   "mass": {
     "spacex_t": 1645.7,
-    "row_t": 369.0,
-    "world_success_launches": 258,
-    "row_launches": 133,
+    "row_t": 372.0,
+    "world_success_launches": 259,
+    "row_launches": 134,
     "spacex_api_t": 10.6,
     "spacex_estimate_t": 1635.1,
     "spacex_api_launches": 2,
