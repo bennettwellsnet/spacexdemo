@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-15T17:42:27Z",
+  "fetched_at": "2026-11-16T21:01:38Z",
   "counts": {
     "flown": 127,
     "success": 127,
@@ -2061,7 +2061,7 @@
     },
     {
       "id": "76617033-4dc0-4448-b50c-e5b0d5a18539",
-      "net": "2026-11-18T03:14:00Z",
+      "net": "2026-11-19T03:00:00Z",
       "name": "USSF-317",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
@@ -2172,22 +2172,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon2520925_image_20221009234147.png"
     },
     {
-      "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 12",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "c5783e2b-d458-4b99-9936-4043c236190b",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 1 Transport Layer F",
@@ -2199,6 +2183,22 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 12",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
@@ -2236,9 +2236,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
+      "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 7",
+      "name": "Rivada 2",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2252,9 +2252,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
+      "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 2",
+      "name": "Rivada 7",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2540,6 +2540,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "2f31a7f0-968a-448d-b447-333bf0341078",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 4",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "71ed4649-8d71-42e8-8548-d42ffa2c5a6e",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 2 Transport Layer E",
@@ -2559,22 +2575,6 @@
       "id": "511a3ef8-799e-4723-9293-b954d9d2eb83",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 10",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "2f31a7f0-968a-448d-b447-333bf0341078",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 4",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
