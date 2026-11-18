@@ -2,7 +2,7 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-17T19:51:10Z",
+  "fetched_at": "2026-11-18T19:24:07Z",
   "counts": {
     "flown": 127,
     "success": 127,
@@ -11,7 +11,7 @@
     "falcon9": 120,
     "starship": 4,
     "falcon_heavy": 3,
-    "upcoming": 35
+    "upcoming": 36
   },
   "mass": {
     "spacex_t": 1653.7,
@@ -2057,7 +2057,7 @@
       "mission_type": "Communications",
       "payload_t": 0.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_on_the_image_20260724044615.jpg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/starship_42_dur_image_20261118092530.jpeg"
     },
     {
       "id": "76617033-4dc0-4448-b50c-e5b0d5a18539",
@@ -2095,6 +2095,22 @@
       "id": "460d9db7-eaf6-4cd9-b095-cff433534c09",
       "net": "2026-11-23T16:04:00Z",
       "name": "USSF-266",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "Go for Launch",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 8.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
+    },
+    {
+      "id": "b0d27def-0a88-44c3-a947-1fd5b8503e2c",
+      "net": "2026-11-28T04:53:00Z",
+      "name": "USSF-380",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2188,22 +2204,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 12",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "c703fab3-2ce4-4cf1-861d-754da3f3ad42",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 2 Transport Layer A",
@@ -2215,6 +2215,22 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
+      "id": "bf5c6fa2-3add-49ff-aad6-c6450148cd89",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 12",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
@@ -2332,22 +2348,6 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
-      "id": "fc1bd321-e502-4d0f-81f4-1926dece81c6",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "VICTUS SURGO",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "Unknown Pad",
-      "site": "Cape Canaveral SFS, FL, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
       "id": "c1bd775a-2fff-45bb-9726-765b69817c19",
       "net": "2026-12-31T00:00:00Z",
       "name": "USSF-75",
@@ -2362,6 +2362,22 @@
       "payload_t": 8.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_heavy_image_20220129192819.jpeg"
+    },
+    {
+      "id": "fc1bd321-e502-4d0f-81f4-1926dece81c6",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "VICTUS SURGO",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "Unknown Pad",
+      "site": "Cape Canaveral SFS, FL, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "ab932c60-d808-4825-ab71-b6fe0a745f15",
