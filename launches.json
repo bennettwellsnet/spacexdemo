@@ -2,29 +2,29 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-20T19:05:48Z",
+  "fetched_at": "2026-11-21T17:57:41Z",
   "counts": {
-    "flown": 127,
-    "success": 127,
+    "flown": 128,
+    "success": 128,
     "failure": 0,
     "partial": 0,
-    "falcon9": 120,
+    "falcon9": 121,
     "starship": 4,
     "falcon_heavy": 3,
-    "upcoming": 36
+    "upcoming": 35
   },
   "mass": {
-    "spacex_t": 1653.7,
+    "spacex_t": 1661.7,
     "row_t": 389.0,
-    "world_success_launches": 267,
+    "world_success_launches": 268,
     "row_launches": 140,
     "spacex_api_t": 10.6,
-    "spacex_estimate_t": 1643.1,
+    "spacex_estimate_t": 1651.1,
     "spacex_api_launches": 2,
-    "spacex_estimate_launches": 125,
+    "spacex_estimate_launches": 126,
     "row_api_t": 2.6,
     "row_api_launches": 2,
-    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 125 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
+    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 126 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
   },
   "launches": [
     {
@@ -2067,8 +2067,8 @@
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
       "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "Go for Launch",
+      "status": "success",
+      "status_label": "Launch Successful",
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
@@ -2204,6 +2204,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 7",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "56ca6058-7ccc-4ec0-b1b0-fb49f3bfee49",
       "net": "2026-12-31T00:00:00Z",
       "name": "NROL-195",
@@ -2220,9 +2236,9 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
     },
     {
-      "id": "1fa3741c-3339-4954-a026-2cd9d36161c0",
+      "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
       "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 7",
+      "name": "Rivada 2",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
@@ -2250,22 +2266,6 @@
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20241020164113.jpeg"
-    },
-    {
-      "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 2",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
       "id": "d08d8b46-353b-4eee-ab5e-e1385b329008",
@@ -2556,6 +2556,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "511a3ef8-799e-4723-9293-b954d9d2eb83",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "Rivada 10",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Communications",
+      "payload_t": 6.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
+    },
+    {
       "id": "2f31a7f0-968a-448d-b447-333bf0341078",
       "net": "2026-12-31T00:00:00Z",
       "name": "Rivada 4",
@@ -2583,22 +2599,6 @@
       "status_label": "To Be Determined",
       "orbit": null,
       "mission_type": "Government/Top Secret",
-      "payload_t": 6.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "511a3ef8-799e-4723-9293-b954d9d2eb83",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "Rivada 10",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Communications",
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
