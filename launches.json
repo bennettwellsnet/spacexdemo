@@ -2,29 +2,29 @@
   "source": "Launch Library 2 (thespacedevs.com)",
   "source_url": "https://ll.thespacedevs.com/2.3.0/",
   "year": 2026,
-  "fetched_at": "2026-11-21T17:57:41Z",
+  "fetched_at": "2026-11-22T18:30:30Z",
   "counts": {
-    "flown": 128,
-    "success": 128,
+    "flown": 129,
+    "success": 129,
     "failure": 0,
     "partial": 0,
-    "falcon9": 121,
+    "falcon9": 122,
     "starship": 4,
     "falcon_heavy": 3,
-    "upcoming": 35
+    "upcoming": 34
   },
   "mass": {
-    "spacex_t": 1661.7,
+    "spacex_t": 1669.7,
     "row_t": 389.0,
-    "world_success_launches": 268,
+    "world_success_launches": 269,
     "row_launches": 140,
     "spacex_api_t": 10.6,
-    "spacex_estimate_t": 1651.1,
+    "spacex_estimate_t": 1659.1,
     "spacex_api_launches": 2,
-    "spacex_estimate_launches": 126,
+    "spacex_estimate_launches": 127,
     "row_api_t": 2.6,
     "row_api_launches": 2,
-    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 126 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
+    "note": "SpaceX tons use Launch Library 2 payload mass for 2 flown mission(s) (10.6 t); the other 127 use class estimates (Starlink ~15.5–16.7 t). Rest-of-world mixes API payload mass (2.6 t on 2 flight(s)) with ~2.8 t per remaining orbital success. Not official telemetry."
   },
   "launches": [
     {
@@ -2073,18 +2073,18 @@
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
       "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20260816171423.jpg"
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_liftof_image_20261122120902.jpg"
     },
     {
       "id": "951a341f-236b-42fe-a667-4ab2fcf36eac",
-      "net": "2026-11-22T12:16:00Z",
+      "net": "2026-11-22T12:23:56Z",
       "name": "NROL-136",
       "vehicle": "falcon9",
       "vehicle_label": "Falcon 9 Block 5",
       "pad": "SLC-4E",
       "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "Go for Launch",
+      "status": "success",
+      "status_label": "Launch Successful",
       "orbit": null,
       "mission_type": "Government/Top Secret",
       "payload_t": 8.0,
@@ -2188,6 +2188,22 @@
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
     },
     {
+      "id": "56ca6058-7ccc-4ec0-b1b0-fb49f3bfee49",
+      "net": "2026-12-31T00:00:00Z",
+      "name": "NROL-195",
+      "vehicle": "falcon9",
+      "vehicle_label": "Falcon 9 Block 5",
+      "pad": "SLC-4E",
+      "site": "Vandenberg SFB, CA, USA",
+      "status": "upcoming",
+      "status_label": "To Be Determined",
+      "orbit": null,
+      "mission_type": "Government/Top Secret",
+      "payload_t": 8.0,
+      "payload_source": "estimate",
+      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
+    },
+    {
       "id": "cb1762f0-90f4-4902-a5f6-655a7ade25bf",
       "net": "2026-12-31T00:00:00Z",
       "name": "SDA Tranche 2 Tracking Layer B",
@@ -2218,22 +2234,6 @@
       "payload_t": 6.0,
       "payload_source": "estimate",
       "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_image_20230807133459.jpeg"
-    },
-    {
-      "id": "56ca6058-7ccc-4ec0-b1b0-fb49f3bfee49",
-      "net": "2026-12-31T00:00:00Z",
-      "name": "NROL-195",
-      "vehicle": "falcon9",
-      "vehicle_label": "Falcon 9 Block 5",
-      "pad": "SLC-4E",
-      "site": "Vandenberg SFB, CA, USA",
-      "status": "upcoming",
-      "status_label": "To Be Determined",
-      "orbit": null,
-      "mission_type": "Government/Top Secret",
-      "payload_t": 8.0,
-      "payload_source": "estimate",
-      "image": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/falcon_9_on_slc_image_20241024165956.jpg"
     },
     {
       "id": "20fa8dc4-8cab-41cf-b452-98a2620f7e86",
